@@ -1,0 +1,198 @@
+{
+  "_meta": {
+    "description": "Published premium quotes used to validate src/premium.py. Annual premiums in local currency. Only type 'published' quotes are used for fitting and accuracy scores; 'derived' quotes apply official rating factors to a published figure, so they are not independent and are shown for illustration only.",
+    "standard_life": "Unless stated, adults are BMI 24, non-smoking, with no pre-existing disease (insurer 'standard life').",
+    "collected": "2026-10-23"
+  },
+  "USA": [
+    {
+      "id": "US-1",
+      "label": "Age 40, non-smoker, individual (benchmark silver)",
+      "profile": {"age": 40, "sex": "male", "bmi": 24, "children": 0, "smoker": false},
+      "annual_premium": 7500,
+      "quote_year": 2026,
+      "sum_insured": null,
+      "type": "published",
+      "source": "KFF, Average Monthly Marketplace Premiums by Metal Tier, 2026: US average benchmark silver for a 40-year-old = $625/month",
+      "source_url": "https://www.kff.org/affordable-care-act/state-indicator/average-marketplace-premiums-by-metal-tier/"
+    },
+    {
+      "id": "US-2",
+      "label": "Age 30, non-smoker, individual",
+      "profile": {"age": 30, "sex": "male", "bmi": 24, "children": 0, "smoker": false},
+      "annual_premium": 6660.8,
+      "quote_year": 2026,
+      "sum_insured": null,
+      "type": "derived",
+      "source": "KFF $625/month (age 40) x CMS federal default age curve 1.135/1.278 = $555.07/month",
+      "source_url": "https://www.cms.gov/CCIIO/Resources/Regulations-and-Guidance/Downloads/Final-Guidance-Regarding-Age-Curves-and-State-Reporting-12-16-16.pdf"
+    },
+    {
+      "id": "US-3",
+      "label": "Age 45, smoker, individual",
+      "profile": {"age": 45, "sex": "male", "bmi": 24, "children": 0, "smoker": true},
+      "annual_premium": 12711.5,
+      "quote_year": 2026,
+      "sum_insured": null,
+      "type": "derived",
+      "source": "KFF $625/month x CMS age curve 1.444/1.278 x federal max tobacco ratio 1.5 (45 CFR 147.102) = $1,059.29/month",
+      "source_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.102"
+    },
+    {
+      "id": "US-4",
+      "label": "Family: two adults 35, children 5 and 8",
+      "profile": {"members": [
+        {"age": 35, "sex": "male", "bmi": 24, "children": 2, "smoker": false},
+        {"age": 35, "sex": "female", "bmi": 24, "children": 2, "smoker": false},
+        {"age": 8, "sex": "female", "bmi": 16, "children": 0, "smoker": false},
+        {"age": 5, "sex": "male", "bmi": 16, "children": 0, "smoker": false}]},
+      "annual_premium": 23321.6,
+      "quote_year": 2026,
+      "sum_insured": null,
+      "type": "derived",
+      "source": "KFF $625/month x CMS age curve (2 x 1.222 + 2 x 0.765) / 1.278 = $1,943.47/month",
+      "source_url": "https://www.kff.org/affordable-care-act/state-indicator/average-marketplace-premiums-by-metal-tier/"
+    },
+    {
+      "id": "US-5",
+      "label": "Employer plan, single coverage (average covered worker)",
+      "profile": {"group": "single"},
+      "annual_premium": 9804,
+      "quote_year": 2026,
+      "sum_insured": null,
+      "type": "published",
+      "source": "KFF 2026 Employer Health Benefits Survey (pub. 22 Oct 2026, 1,937 firms): average annual premium, single coverage, $9,804 (employer + worker share)",
+      "source_url": "https://www.kff.org/health-costs/2026-employer-health-benefits-survey/"
+    },
+    {
+      "id": "US-6",
+      "label": "Employer plan, family of four",
+      "profile": {"group": "family"},
+      "annual_premium": 28303,
+      "quote_year": 2026,
+      "sum_insured": null,
+      "type": "published",
+      "source": "KFF 2026 Employer Health Benefits Survey: average annual premium, family coverage (defined as a family of four), $28,303",
+      "source_url": "https://www.kff.org/health-costs/2026-employer-health-benefits-survey/"
+    }
+  ],
+  "IND": [
+    {
+      "id": "IN-1",
+      "label": "Age 30 male, non-smoker, individual, Rs 10 lakh, Tier-1 city",
+      "profile": {"age": 30, "sex": "male", "bmi": 24, "children": 0, "smoker": false},
+      "annual_premium": 10350,
+      "quote_year": 2026,
+      "sum_insured": 1000000,
+      "type": "published",
+      "source": "nyvo.in, Best Rs 10 Lakh Health Insurance 2026 (updated 1 Oct 2026). Median of 4 plans: HDFC ERGO Optima Secure Plus 12,800; Aditya Birla Activ One Max 10,500; Care Supreme 9,500; Niva Bupa ReAssure 3.0 10,200",
+      "source_url": "https://nyvo.in/health-insurance/best-10-lakh-health-insurance"
+    },
+    {
+      "id": "IN-2",
+      "label": "Family floater 2A+1C (35, 34, child 5), Rs 15 lakh, Delhi",
+      "profile": {"members": [
+        {"age": 35, "sex": "male", "bmi": 24, "children": 1, "smoker": false},
+        {"age": 34, "sex": "female", "bmi": 24, "children": 1, "smoker": false},
+        {"age": 5, "sex": "male", "bmi": 16, "children": 0, "smoker": false}]},
+      "annual_premium": 25521.5,
+      "quote_year": 2026,
+      "sum_insured": 1500000,
+      "type": "published",
+      "source": "Ditto (joinditto.in), Best family health insurance plans (last updated 29 Aug 2026), pin 110010, incl. recommended add-ons. Median of 4 plans: HDFC ERGO Optima Secure+ 26,017; Care Supreme 27,161; Aditya Birla Activ One MAX 21,478; Niva Bupa ReAssure 2.0 Platinum+ 25,026",
+      "source_url": "https://joinditto.in/health-insurance/best-family-health-insurance-plans/"
+    },
+    {
+      "id": "IN-3",
+      "label": "Senior couple (62, 63), Rs 15 lakh floater, Delhi",
+      "profile": {"members": [
+        {"age": 63, "sex": "male", "bmi": 24, "children": 0, "smoker": false},
+        {"age": 62, "sex": "female", "bmi": 24, "children": 0, "smoker": false}]},
+      "annual_premium": 68239,
+      "quote_year": 2026,
+      "sum_insured": 1500000,
+      "type": "published",
+      "source": "Ditto (joinditto.in), same table. Median of 3 plans: Care Supreme 78,923; Aditya Birla Activ One MAX 66,505; Niva Bupa ReAssure 2.0 Platinum+ 68,239 (HDFC not offered to seniors)",
+      "source_url": "https://joinditto.in/health-insurance/best-family-health-insurance-plans/"
+    }
+  ],
+  "KEN": [
+    {
+      "id": "KE-1",
+      "label": "Age 30 principal, inpatient KES 1M",
+      "profile": {"age": 30, "sex": "male", "bmi": 24, "children": 0, "smoker": false},
+      "annual_premium": 35223,
+      "quote_year": 2022,
+      "sum_insured": 1000000,
+      "type": "published",
+      "source": "Old Mutual Kenya, AfyaImara Family Cover brochure, inpatient rates, principal 30-40 yrs, KES 1,000,000 limit (PDF dated Oct 2022)",
+      "source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    {
+      "id": "KE-2",
+      "label": "Age 45 principal, inpatient KES 1M",
+      "profile": {"age": 45, "sex": "male", "bmi": 24, "children": 0, "smoker": false},
+      "annual_premium": 39385,
+      "quote_year": 2022,
+      "sum_insured": 1000000,
+      "type": "published",
+      "source": "Old Mutual Kenya, AfyaImara Family Cover brochure, principal 41-50 yrs, KES 1,000,000 limit (PDF dated Oct 2022)",
+      "source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    {
+      "id": "KE-3",
+      "label": "Family: principal 35, spouse 33, children 5 and 8, inpatient KES 1M",
+      "profile": {"members": [
+        {"age": 35, "sex": "male", "bmi": 24, "children": 2, "smoker": false},
+        {"age": 33, "sex": "female", "bmi": 24, "children": 2, "smoker": false},
+        {"age": 8, "sex": "female", "bmi": 16, "children": 0, "smoker": false},
+        {"age": 5, "sex": "male", "bmi": 16, "children": 0, "smoker": false}]},
+      "annual_premium": 96212,
+      "quote_year": 2022,
+      "sum_insured": 1000000,
+      "type": "published",
+      "source": "Old Mutual Kenya, AfyaImara Family Cover brochure: principal 35,223 + spouse 26,785 + 2 x child 17,102 (KES 1,000,000 limit, PDF dated Oct 2022)",
+      "source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    {
+      "id": "KE-4",
+      "label": "AAR SME plan, age band 18-30 (priced at 25), inpatient KES 1M",
+      "profile": {"age": 25, "sex": "male", "bmi": 24, "children": 0, "smoker": false},
+      "annual_premium": 16801,
+      "quote_year": 2017,
+      "inflate_to_current_year": true,
+      "sum_insured": 1000000,
+      "type": "published",
+      "source": "AAR Insurance Kenya, Business Medical Plan (SME) brochure, unshared inpatient rates, 18-30 band, KES 1,000,000 limit, includes PA cover KES 1M (PDF created Nov 2017)",
+      "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    },
+    {
+      "id": "KE-5",
+      "label": "AAR SME plan, age band 41-50 (priced at 45), inpatient KES 1M",
+      "profile": {"age": 45, "sex": "male", "bmi": 24, "children": 0, "smoker": false},
+      "annual_premium": 34693,
+      "quote_year": 2017,
+      "inflate_to_current_year": true,
+      "sum_insured": 1000000,
+      "type": "published",
+      "source": "AAR Insurance Kenya, Business Medical Plan (SME) brochure, unshared inpatient rates, 41-50 band, KES 1,000,000 limit (PDF created Nov 2017)",
+      "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    },
+    {
+      "id": "KE-6",
+      "label": "AAR SME plan, family shared M+3 (35, 33, children 5 and 8), inpatient KES 1M",
+      "profile": {"members": [
+        {"age": 35, "sex": "male", "bmi": 24, "children": 2, "smoker": false},
+        {"age": 33, "sex": "female", "bmi": 24, "children": 2, "smoker": false},
+        {"age": 8, "sex": "female", "bmi": 16, "children": 0, "smoker": false},
+        {"age": 5, "sex": "male", "bmi": 16, "children": 0, "smoker": false}]},
+      "annual_premium": 59734,
+      "quote_year": 2017,
+      "inflate_to_current_year": true,
+      "sum_insured": 1000000,
+      "type": "published",
+      "source": "AAR Insurance Kenya, Business Medical Plan (SME) brochure, family shared rates, M+3, KES 1,000,000 limit (PDF created Nov 2017)",
+      "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    }
+  ]
+}

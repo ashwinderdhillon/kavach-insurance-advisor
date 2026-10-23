@@ -1,0 +1,176 @@
+{
+  "USA": {
+    "health_spend_per_capita_usd": {
+      "value": 13473.19335938,
+      "year": 2023,
+      "unit": "SH.XPD.CHEX.PC.CD",
+      "source": "World Bank WDI, indicator SH.XPD.CHEX.PC.CD",
+      "source_url": "https://api.worldbank.org/v2/country/USA/indicator/SH.XPD.CHEX.PC.CD?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "out_of_pocket_pct_health_spend": {
+      "value": 10.92723846,
+      "year": 2023,
+      "unit": "SH.XPD.OOPC.CH.ZS",
+      "source": "World Bank WDI, indicator SH.XPD.OOPC.CH.ZS",
+      "source_url": "https://api.worldbank.org/v2/country/USA/indicator/SH.XPD.OOPC.CH.ZS?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "cpi_inflation_pct": {
+      "value": 2.94952520485207,
+      "year": 2024,
+      "unit": "FP.CPI.TOTL.ZG",
+      "source": "World Bank WDI, indicator FP.CPI.TOTL.ZG",
+      "source_url": "https://api.worldbank.org/v2/country/USA/indicator/FP.CPI.TOTL.ZG?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "gdp_per_capita_usd": {
+      "value": 90026.5163005744,
+      "year": 2025,
+      "unit": "NY.GDP.PCAP.CD",
+      "source": "World Bank WDI, indicator NY.GDP.PCAP.CD",
+      "source_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.PCAP.CD?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "ppp_conversion_factor_lcu_per_intl_usd": {
+      "value": 1,
+      "year": 2025,
+      "unit": "PA.NUS.PPP",
+      "source": "World Bank WDI, indicator PA.NUS.PPP",
+      "source_url": "https://api.worldbank.org/v2/country/USA/indicator/PA.NUS.PPP?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "wb_official_fx_lcu_per_usd": {
+      "value": 1,
+      "year": 2025,
+      "unit": "PA.NUS.FCRF",
+      "source": "World Bank WDI, indicator PA.NUS.FCRF",
+      "source_url": "https://api.worldbank.org/v2/country/USA/indicator/PA.NUS.FCRF?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "wb_fx_lcu_per_usd_health_year": {
+      "value": 1,
+      "year": 2023,
+      "unit": "PA.NUS.FCRF",
+      "source": "World Bank WDI, indicator PA.NUS.FCRF",
+      "source_url": "https://api.worldbank.org/v2/country/USA/indicator/PA.NUS.FCRF?format=json&date=2023",
+      "fetched": "2026-10-23"
+    }
+  },
+  "IND": {
+    "health_spend_per_capita_usd": {
+      "value": 84.68669891,
+      "year": 2023,
+      "unit": "SH.XPD.CHEX.PC.CD",
+      "source": "World Bank WDI, indicator SH.XPD.CHEX.PC.CD",
+      "source_url": "https://api.worldbank.org/v2/country/IND/indicator/SH.XPD.CHEX.PC.CD?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "out_of_pocket_pct_health_spend": {
+      "value": 43.88510513,
+      "year": 2023,
+      "unit": "SH.XPD.OOPC.CH.ZS",
+      "source": "World Bank WDI, indicator SH.XPD.OOPC.CH.ZS",
+      "source_url": "https://api.worldbank.org/v2/country/IND/indicator/SH.XPD.OOPC.CH.ZS?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "cpi_inflation_pct": {
+      "value": 2.39884954182294,
+      "year": 2025,
+      "unit": "FP.CPI.TOTL.ZG",
+      "source": "World Bank WDI, indicator FP.CPI.TOTL.ZG",
+      "source_url": "https://api.worldbank.org/v2/country/IND/indicator/FP.CPI.TOTL.ZG?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "gdp_per_capita_usd": {
+      "value": 2702.47987141553,
+      "year": 2025,
+      "unit": "NY.GDP.PCAP.CD",
+      "source": "World Bank WDI, indicator NY.GDP.PCAP.CD",
+      "source_url": "https://api.worldbank.org/v2/country/IND/indicator/NY.GDP.PCAP.CD?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "ppp_conversion_factor_lcu_per_intl_usd": {
+      "value": 20.0886288014602,
+      "year": 2025,
+      "unit": "PA.NUS.PPP",
+      "source": "World Bank WDI, indicator PA.NUS.PPP",
+      "source_url": "https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.PPP?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "wb_official_fx_lcu_per_usd": {
+      "value": 87.1584483507393,
+      "year": 2025,
+      "unit": "PA.NUS.FCRF",
+      "source": "World Bank WDI, indicator PA.NUS.FCRF",
+      "source_url": "https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.FCRF?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "wb_fx_lcu_per_usd_health_year": {
+      "value": 82.5992764460784,
+      "year": 2023,
+      "unit": "PA.NUS.FCRF",
+      "source": "World Bank WDI, indicator PA.NUS.FCRF",
+      "source_url": "https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.FCRF?format=json&date=2023",
+      "fetched": "2026-10-23"
+    }
+  },
+  "KEN": {
+    "health_spend_per_capita_usd": {
+      "value": 84.958992,
+      "year": 2023,
+      "unit": "SH.XPD.CHEX.PC.CD",
+      "source": "World Bank WDI, indicator SH.XPD.CHEX.PC.CD",
+      "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/SH.XPD.CHEX.PC.CD?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "out_of_pocket_pct_health_spend": {
+      "value": 24.24565315,
+      "year": 2023,
+      "unit": "SH.XPD.OOPC.CH.ZS",
+      "source": "World Bank WDI, indicator SH.XPD.OOPC.CH.ZS",
+      "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/SH.XPD.OOPC.CH.ZS?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "cpi_inflation_pct": {
+      "value": 4.0693076061457,
+      "year": 2025,
+      "unit": "FP.CPI.TOTL.ZG",
+      "source": "World Bank WDI, indicator FP.CPI.TOTL.ZG",
+      "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/FP.CPI.TOTL.ZG?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "gdp_per_capita_usd": {
+      "value": 2362.86091198611,
+      "year": 2025,
+      "unit": "NY.GDP.PCAP.CD",
+      "source": "World Bank WDI, indicator NY.GDP.PCAP.CD",
+      "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/NY.GDP.PCAP.CD?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "ppp_conversion_factor_lcu_per_intl_usd": {
+      "value": 43.5471478663385,
+      "year": 2025,
+      "unit": "PA.NUS.PPP",
+      "source": "World Bank WDI, indicator PA.NUS.PPP",
+      "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/PA.NUS.PPP?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "wb_official_fx_lcu_per_usd": {
+      "value": 129.302572099377,
+      "year": 2025,
+      "unit": "PA.NUS.FCRF",
+      "source": "World Bank WDI, indicator PA.NUS.FCRF",
+      "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/PA.NUS.FCRF?format=json&mrnev=1",
+      "fetched": "2026-10-23"
+    },
+    "wb_fx_lcu_per_usd_health_year": {
+      "value": 139.846383759616,
+      "year": 2023,
+      "unit": "PA.NUS.FCRF",
+      "source": "World Bank WDI, indicator PA.NUS.FCRF",
+      "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/PA.NUS.FCRF?format=json&date=2023",
+      "fetched": "2026-10-23"
+    }
+  }
+}

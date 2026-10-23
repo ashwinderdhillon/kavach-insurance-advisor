@@ -1,0 +1,227 @@
+{
+  "_meta": {
+    "source": "WHO Global Health Observatory (GHO) OData API",
+    "fetched": "2026-10-23",
+    "indicators": {
+      "LIFE_0000000030": "nqx - probability of dying between ages x and x+n",
+      "LIFE_0000000029": "nMx - age-specific death rate between ages x and x+n",
+      "M_Est_smk_curr_std": "Estimate of current tobacco smoking prevalence (%) (age-standardized)"
+    }
+  },
+  "USA": {
+    "year": 2023,
+    "source_url_nqx": "https://ghoapi.azureedge.net/api/LIFE_0000000030?$filter=SpatialDim eq 'USA'",
+    "source_url_nmx": "https://ghoapi.azureedge.net/api/LIFE_0000000029?$filter=SpatialDim eq 'USA'",
+    "fetched": "2026-10-23",
+    "nqx": {
+      "male": {
+        "0": 0.005836751,
+        "1": 0.00122015,
+        "5": 0.000670745,
+        "10": 0.000963291,
+        "15": 0.004005328,
+        "20": 0.006696786,
+        "25": 0.008610296,
+        "30": 0.010949742,
+        "35": 0.013041378,
+        "40": 0.01614952,
+        "45": 0.020099656,
+        "50": 0.028643077,
+        "55": 0.042276841,
+        "60": 0.06204131,
+        "65": 0.087293327,
+        "70": 0.122317769,
+        "75": 0.178729742,
+        "80": 0.287700527,
+        "85": 1.0
+      },
+      "female": {
+        "0": 0.004978644,
+        "1": 0.000949487,
+        "5": 0.000560923,
+        "10": 0.000664649,
+        "15": 0.001603084,
+        "20": 0.002558762,
+        "25": 0.003470941,
+        "30": 0.00506112,
+        "35": 0.006618858,
+        "40": 0.009135574,
+        "45": 0.012064754,
+        "50": 0.017932208,
+        "55": 0.026673586,
+        "60": 0.040423722,
+        "65": 0.057540214,
+        "70": 0.086057625,
+        "75": 0.136245222,
+        "80": 0.224820529,
+        "85": 1.0
+      }
+    },
+    "nmx_85plus": {
+      "male": 0.146226952,
+      "female": 0.133721607
+    },
+    "smoking_prevalence": {
+      "male": {
+        "value": 0.187,
+        "year": 2022,
+        "source": "WHO GHO M_Est_smk_curr_std",
+        "source_url": "https://ghoapi.azureedge.net/api/M_Est_smk_curr_std?$filter=SpatialDim eq 'USA'",
+        "fetched": "2026-10-23",
+        "note": ""
+      },
+      "female": {
+        "value": 0.125,
+        "year": 2022,
+        "source": "WHO GHO M_Est_smk_curr_std",
+        "source_url": "https://ghoapi.azureedge.net/api/M_Est_smk_curr_std?$filter=SpatialDim eq 'USA'",
+        "fetched": "2026-10-23",
+        "note": ""
+      }
+    }
+  },
+  "IND": {
+    "year": 2023,
+    "source_url_nqx": "https://ghoapi.azureedge.net/api/LIFE_0000000030?$filter=SpatialDim eq 'IND'",
+    "source_url_nmx": "https://ghoapi.azureedge.net/api/LIFE_0000000029?$filter=SpatialDim eq 'IND'",
+    "fetched": "2026-10-23",
+    "nqx": {
+      "male": {
+        "0": 0.02479198,
+        "1": 0.003205515,
+        "5": 0.002095702,
+        "10": 0.002455611,
+        "15": 0.00527694,
+        "20": 0.007046893,
+        "25": 0.009061458,
+        "30": 0.012759046,
+        "35": 0.015908456,
+        "40": 0.021097373,
+        "45": 0.030007856,
+        "50": 0.050371912,
+        "55": 0.070929664,
+        "60": 0.096509219,
+        "65": 0.116716752,
+        "70": 0.185385331,
+        "75": 0.306818295,
+        "80": 0.502261564,
+        "85": 1.0
+      },
+      "female": {
+        "0": 0.024231128,
+        "1": 0.004016979,
+        "5": 0.001890147,
+        "10": 0.002040915,
+        "15": 0.005568935,
+        "20": 0.0065733,
+        "25": 0.006136504,
+        "30": 0.008422798,
+        "35": 0.010203977,
+        "40": 0.013762634,
+        "45": 0.017515867,
+        "50": 0.037552093,
+        "55": 0.043068084,
+        "60": 0.069802839,
+        "65": 0.089889536,
+        "70": 0.152016837,
+        "75": 0.214313301,
+        "80": 0.451449596,
+        "85": 1.0
+      }
+    },
+    "nmx_85plus": {
+      "male": 0.297894663,
+      "female": 0.23278183
+    },
+    "smoking_prevalence": {
+      "male": {
+        "value": 0.18,
+        "year": 2022,
+        "source": "WHO GHO M_Est_smk_curr_std",
+        "source_url": "https://ghoapi.azureedge.net/api/M_Est_smk_curr_std?$filter=SpatialDim eq 'IND'",
+        "fetched": "2026-10-23",
+        "note": "The most recent national survey was conducted in 2019\u201321. This is a projection."
+      },
+      "female": {
+        "value": 0.016,
+        "year": 2022,
+        "source": "WHO GHO M_Est_smk_curr_std",
+        "source_url": "https://ghoapi.azureedge.net/api/M_Est_smk_curr_std?$filter=SpatialDim eq 'IND'",
+        "fetched": "2026-10-23",
+        "note": "The most recent national survey was conducted in 2019\u201321. This is a projection."
+      }
+    }
+  },
+  "KEN": {
+    "year": 2023,
+    "source_url_nqx": "https://ghoapi.azureedge.net/api/LIFE_0000000030?$filter=SpatialDim eq 'KEN'",
+    "source_url_nmx": "https://ghoapi.azureedge.net/api/LIFE_0000000029?$filter=SpatialDim eq 'KEN'",
+    "fetched": "2026-10-23",
+    "nqx": {
+      "male": {
+        "0": 0.037920424,
+        "1": 0.005670418,
+        "5": 0.002785395,
+        "10": 0.002521547,
+        "15": 0.008442342,
+        "20": 0.011245882,
+        "25": 0.013677632,
+        "30": 0.015462937,
+        "35": 0.024782623,
+        "40": 0.029075225,
+        "45": 0.050599122,
+        "50": 0.073203429,
+        "55": 0.076530296,
+        "60": 0.127631405,
+        "65": 0.158613951,
+        "70": 0.265487667,
+        "75": 0.339861355,
+        "80": 0.550680475,
+        "85": 1.0
+      },
+      "female": {
+        "0": 0.030758231,
+        "1": 0.004593401,
+        "5": 0.002154986,
+        "10": 0.00161822,
+        "15": 0.004611463,
+        "20": 0.004789742,
+        "25": 0.006404232,
+        "30": 0.007892496,
+        "35": 0.0163797,
+        "40": 0.01526721,
+        "45": 0.031849454,
+        "50": 0.045057906,
+        "55": 0.041429212,
+        "60": 0.081715707,
+        "65": 0.101212125,
+        "70": 0.175326961,
+        "75": 0.281395815,
+        "80": 0.423445618,
+        "85": 1.0
+      }
+    },
+    "nmx_85plus": {
+      "male": 0.347867594,
+      "female": 0.251528856
+    },
+    "smoking_prevalence": {
+      "male": {
+        "value": 0.146,
+        "year": 2022,
+        "source": "WHO GHO M_Est_smk_curr_std",
+        "source_url": "https://ghoapi.azureedge.net/api/M_Est_smk_curr_std?$filter=SpatialDim eq 'KEN'",
+        "fetched": "2026-10-23",
+        "note": ""
+      },
+      "female": {
+        "value": 0.011000000000000001,
+        "year": 2022,
+        "source": "WHO GHO M_Est_smk_curr_std",
+        "source_url": "https://ghoapi.azureedge.net/api/M_Est_smk_curr_std?$filter=SpatialDim eq 'KEN'",
+        "fetched": "2026-10-23",
+        "note": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "description": "Published term life premiums used to validate src/term_life.py. Annual premiums in local currency, level premium, pure term (no return of premium).",
+    "collected": "2026-10-23"
+  },
+  "USA": [
+    {"id": "UST-1", "label": "Male 30, non-smoker, $500k, 20-year term",
+     "age": 30, "sex": "male", "smoker": false, "cover": 500000, "term_years": 20, "annual_premium": 456,
+     "source": "MoneyGeek, Average Life Insurance Cost in 2026 (updated 1 Oct 2026): $38/month, average weight and health, quotes from 30 major insurers",
+     "source_url": "https://www.moneygeek.com/insurance/life/rates/"},
+    {"id": "UST-2", "label": "Male 45, non-smoker, $500k, 20-year term",
+     "age": 45, "sex": "male", "smoker": false, "cover": 500000, "term_years": 20, "annual_premium": 1080,
+     "source": "MoneyGeek (same table): $90/month",
+     "source_url": "https://www.moneygeek.com/insurance/life/rates/"},
+    {"id": "UST-3", "label": "Male 40, smoker, $500k, 20-year term",
+     "age": 40, "sex": "male", "smoker": true, "cover": 500000, "term_years": 20, "annual_premium": 2328,
+     "source": "MoneyGeek (smoker table): $194/month",
+     "source_url": "https://www.moneygeek.com/insurance/life/rates/"}
+  ],
+  "IND": [
+    {"id": "INT-1", "label": "Male 30, non-smoker, Rs 1 crore, cover to age 60",
+     "age": 30, "sex": "male", "smoker": false, "cover": 10000000, "term_years": 30, "annual_premium": 9528,
+     "source": "nyvo.in, Rs 1 Crore Term Insurance Cost 2026 (premium data May 2026, nil GST): median of 5 plans (Bajaj Life eTouch II, Tata AIA Sampoorna Raksha Promise, Axis Max Life Smart Term Plan Plus, ICICI Pru iProtect Smart Plus, HDFC Life Click 2 Protect Supreme Plus)",
+     "source_url": "https://nyvo.in/term-insurance/1-crore-cost-breakdown"},
+    {"id": "INT-2", "label": "Male 45, non-smoker, Rs 1 crore, cover to age 60",
+     "age": 45, "sex": "male", "smoker": false, "cover": 10000000, "term_years": 15, "annual_premium": 22008,
+     "source": "nyvo.in (same table): median of 5 plans",
+     "source_url": "https://nyvo.in/term-insurance/1-crore-cost-breakdown"},
+    {"id": "INT-3", "label": "Female 30, non-smoker, Rs 1 crore, cover to age 60",
+     "age": 30, "sex": "female", "smoker": false, "cover": 10000000, "term_years": 30, "annual_premium": 8100,
+     "source": "nyvo.in (same table): median of 5 plans",
+     "source_url": "https://nyvo.in/term-insurance/1-crore-cost-breakdown"}
+  ],
+  "KEN": [
+    {"id": "KET-1", "label": "Age 25-30 (priced as male 28), non-smoker, KES 5M, 20-year term",
+     "age": 28, "sex": "male", "smoker": false, "cover": 5000000, "term_years": 20, "annual_premium": 11000,
+     "source": "GetCovered Kenya, Term Life Insurance Kenya 2026: indicative annual premium KES 8,000-14,000 (midpoint used), healthy non-smoker, 20-year term. No insurer named; broker market estimate.",
+     "source_url": "https://getcoveredkenya.com/insurance/term-life-insurance-cover/quote",
+     "quality": "low: indicative range, no insurer named"},
+    {"id": "KET-2", "label": "Age 35 (priced as male), non-smoker, KES 5M, 20-year term",
+     "age": 35, "sex": "male", "smoker": false, "cover": 5000000, "term_years": 20, "annual_premium": 18000,
+     "source": "Keryl Kelonye, Term vs Whole Life Insurance (Kenya), 2026: ~KES 1,500/month for a healthy 35-year-old non-smoker, KES 5M, 20-year term. No insurer named.",
+     "source_url": "https://kerylkelonye.com/blog/term-vs-whole-life-insurance-kenya",
+     "quality": "low: single illustrative example, no insurer named"},
+    {"id": "KET-3", "label": "Age 45-50 (priced as male 48), non-smoker, KES 5M, 20-year term",
+     "age": 48, "sex": "male", "smoker": false, "cover": 5000000, "term_years": 20, "annual_premium": 42500,
+     "source": "GetCovered Kenya (same table): KES 30,000-55,000 (midpoint used)",
+     "source_url": "https://getcoveredkenya.com/insurance/term-life-insurance-cover/quote",
+     "quality": "low: indicative range, no insurer named"}
+  ]
+}

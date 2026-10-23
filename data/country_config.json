@@ -1,0 +1,1164 @@
+{
+  "_meta": {
+    "built": "2026-10-23",
+    "description": "Country calibration inputs for the premium layer. Every number has a source.",
+    "health_spend_scaling": "cost_LCU = model_USD x (H_c_PPP / H_USA) x PPP_c, where H_c_PPP = H_c_USD x FX_c(health year) / PPP_c. Algebraically this equals model_USD x H_c_LCU / H_USA."
+  },
+  "USA": {
+    "name": "United States",
+    "currency": "USD",
+    "symbol": "$",
+    "worldbank": {
+      "health_spend_per_capita_usd": {
+        "value": 13473.19335938,
+        "year": 2023,
+        "unit": "SH.XPD.CHEX.PC.CD",
+        "source": "World Bank WDI, indicator SH.XPD.CHEX.PC.CD",
+        "source_url": "https://api.worldbank.org/v2/country/USA/indicator/SH.XPD.CHEX.PC.CD?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "out_of_pocket_pct_health_spend": {
+        "value": 10.92723846,
+        "year": 2023,
+        "unit": "SH.XPD.OOPC.CH.ZS",
+        "source": "World Bank WDI, indicator SH.XPD.OOPC.CH.ZS",
+        "source_url": "https://api.worldbank.org/v2/country/USA/indicator/SH.XPD.OOPC.CH.ZS?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "cpi_inflation_pct": {
+        "value": 2.94952520485207,
+        "year": 2024,
+        "unit": "FP.CPI.TOTL.ZG",
+        "source": "World Bank WDI, indicator FP.CPI.TOTL.ZG",
+        "source_url": "https://api.worldbank.org/v2/country/USA/indicator/FP.CPI.TOTL.ZG?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "gdp_per_capita_usd": {
+        "value": 90026.5163005744,
+        "year": 2025,
+        "unit": "NY.GDP.PCAP.CD",
+        "source": "World Bank WDI, indicator NY.GDP.PCAP.CD",
+        "source_url": "https://api.worldbank.org/v2/country/USA/indicator/NY.GDP.PCAP.CD?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "ppp_conversion_factor_lcu_per_intl_usd": {
+        "value": 1,
+        "year": 2025,
+        "unit": "PA.NUS.PPP",
+        "source": "World Bank WDI, indicator PA.NUS.PPP",
+        "source_url": "https://api.worldbank.org/v2/country/USA/indicator/PA.NUS.PPP?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "wb_official_fx_lcu_per_usd": {
+        "value": 1,
+        "year": 2025,
+        "unit": "PA.NUS.FCRF",
+        "source": "World Bank WDI, indicator PA.NUS.FCRF",
+        "source_url": "https://api.worldbank.org/v2/country/USA/indicator/PA.NUS.FCRF?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "wb_fx_lcu_per_usd_health_year": {
+        "value": 1,
+        "year": 2023,
+        "unit": "PA.NUS.FCRF",
+        "source": "World Bank WDI, indicator PA.NUS.FCRF",
+        "source_url": "https://api.worldbank.org/v2/country/USA/indicator/PA.NUS.FCRF?format=json&date=2023",
+        "fetched": "2026-10-23"
+      }
+    },
+    "medical_inflation_pct": {
+      "value": 9.6,
+      "unit": "% per year",
+      "year": 2026,
+      "source": "WTW 2026 Global Medical Trends Survey",
+      "source_url": "https://www.wtwco.com/en-cm/insights/2025/10/2026-global-medical-trends-survey",
+      "fetched": "2026-10-23",
+      "note": "WTW 2026 Global Medical Trends Survey, Figure 4 (p.8-10), gross medical trend projected for 2026. Copy of the report PDF read at https://www.moncey-assurances.com/doc/TW-2026.pdf. This is insurer-reported medical cost trend (price + utilisation), not a consumer price index."
+    },
+    "loss_ratio": {
+      "value": 0.85,
+      "unit": "claims / premium",
+      "year": 2024,
+      "source": "KFF, Health Insurer Financial Performance in 2024 (pub. 23 Feb 2026), NAIC data",
+      "source_url": "https://www.kff.org/medicare/health-insurer-financial-performance/",
+      "fetched": "2026-10-23",
+      "note": "'Simple loss ratios were around 85% in individual market, 88% in the fully insured (group) market'. Individual market used because the app prices individual/family cover."
+    },
+    "loss_ratio_group": {
+      "value": 0.88,
+      "unit": "claims / premium",
+      "year": 2024,
+      "source": "KFF, Health Insurer Financial Performance in 2024 (pub. 23 Feb 2026), NAIC data",
+      "source_url": "https://www.kff.org/medicare/health-insurer-financial-performance/",
+      "fetched": "2026-10-23",
+      "note": "Fully insured group market; used for employer (group) premiums."
+    },
+    "policy_interest_rate_pct": {
+      "value": 3.875,
+      "unit": "% per year",
+      "year": 2026,
+      "source": "Federal Reserve FOMC statement, 16 Sep 2026",
+      "source_url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a.htm",
+      "fetched": "2026-10-23",
+      "note": "Target range 3.75-4.00%; midpoint stored."
+    },
+    "fx_lcu_per_usd": {
+      "value": 1.0,
+      "unit": "USD per USD",
+      "year": 2026,
+      "source": "Identity (home currency)",
+      "source_url": null,
+      "fetched": "2026-10-23"
+    },
+    "age_band_loading": {
+      "value": {
+        "0-44": 1.0,
+        "45-59": 1.0,
+        "60+": 1.0
+      },
+      "unit": "multiplier on expected claims / loss ratio",
+      "source": "Model assumption (neutral). See reports/results.md, calibration section.",
+      "source_type": "assumption"
+    },
+    "child_cost_ratio": {
+      "value": 0.8379,
+      "unit": "child (0-14) cost / age-18 cost",
+      "year": 2018,
+      "source": "Derived from CMS federal default age curve (0-14: 0.765, 18: 0.913)",
+      "source_url": "https://www.cms.gov/CCIIO/Resources/Regulations-and-Guidance/Downloads/Final-Guidance-Regarding-Age-Curves-and-State-Reporting-12-16-16.pdf",
+      "fetched": "2026-10-23"
+    },
+    "rating_rules": {
+      "age_curve": {
+        "value": {
+          "0-14": 0.765,
+          "15": 0.833,
+          "16": 0.859,
+          "17": 0.885,
+          "18": 0.913,
+          "19": 0.941,
+          "20": 0.97,
+          "21": 1.0,
+          "22": 1.0,
+          "23": 1.0,
+          "24": 1.0,
+          "25": 1.004,
+          "26": 1.024,
+          "27": 1.048,
+          "28": 1.087,
+          "29": 1.119,
+          "30": 1.135,
+          "31": 1.159,
+          "32": 1.183,
+          "33": 1.198,
+          "34": 1.214,
+          "35": 1.222,
+          "36": 1.23,
+          "37": 1.238,
+          "38": 1.246,
+          "39": 1.262,
+          "40": 1.278,
+          "41": 1.302,
+          "42": 1.325,
+          "43": 1.357,
+          "44": 1.397,
+          "45": 1.444,
+          "46": 1.5,
+          "47": 1.563,
+          "48": 1.635,
+          "49": 1.706,
+          "50": 1.786,
+          "51": 1.865,
+          "52": 1.952,
+          "53": 2.04,
+          "54": 2.135,
+          "55": 2.23,
+          "56": 2.333,
+          "57": 2.437,
+          "58": 2.548,
+          "59": 2.603,
+          "60": 2.714,
+          "61": 2.81,
+          "62": 2.873,
+          "63": 2.952,
+          "64+": 3.0
+        },
+        "unit": "premium ratio vs age 21",
+        "year": 2018,
+        "source": "CMS, Final Guidance Regarding Age Curves and State Reporting (16 Dec 2016), Appendix I",
+        "source_url": "https://www.cms.gov/CCIIO/Resources/Regulations-and-Guidance/Downloads/Final-Guidance-Regarding-Age-Curves-and-State-Reporting-12-16-16.pdf",
+        "fetched": "2026-10-23",
+        "note": "Federal default standard age curve, effective plan years from 2018; states may use their own."
+      },
+      "tobacco_max_ratio": {
+        "value": 1.5,
+        "unit": "max premium ratio tobacco vs non-tobacco",
+        "year": 2026,
+        "source": "45 CFR 147.102(a)(1)(iv)",
+        "source_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.102",
+        "fetched": "2026-10-23",
+        "note": "Federal ceiling; some states set a lower ratio or ban tobacco rating."
+      },
+      "max_children_rated": {
+        "value": 3,
+        "unit": "children under 21 charged per family",
+        "year": 2026,
+        "source": "45 CFR 147.102(c)(1)",
+        "source_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.102",
+        "fetched": "2026-10-23"
+      }
+    },
+    "calibration_factor": {
+      "value": 0.5158,
+      "unit": "multiplier",
+      "source_type": "calibration",
+      "source": "Fitted by src/validate.py: geometric mean of (published quote / uncalibrated model premium) over the quotes listed in fitted_on. Adjusts only the calibration layer; the ML model is unchanged.",
+      "fitted_on": [
+        "US-1",
+        "US-5",
+        "US-6"
+      ],
+      "quotes_file": "data/validation_quotes.json",
+      "reason": "insurance.csv charges (mean $13,270) are well above what insurers actually pay per working-age adult, and ACA benchmark silver plans pay only about 70% of covered costs. Both push the raw model above market premiums.",
+      "fitted": "2026-10-23"
+    },
+    "floater_addon_factor": {
+      "value": 1.0,
+      "unit": "share of each extra member's premium",
+      "year": 2026,
+      "source": "45 CFR 147.102(c)(1): ACA family premiums are the sum of each member's premium (max 3 children under 21 charged); no floater discount",
+      "source_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.102",
+      "fetched": "2026-10-23"
+    },
+    "advisor": {
+      "profile_completeness_threshold": {
+        "value": 0.7,
+        "unit": "share of core profile fields answered",
+        "source_type": "assumption",
+        "source": "Assumption: no recommendation until at least 70% of the core Layer-A fields are known (CLAUDE.md section 6)."
+      },
+      "cooling_off_premium_months_of_income": {
+        "value": 1.0,
+        "unit": "annual premium / monthly income",
+        "source_type": "assumption",
+        "source": "Assumption: suggest sleeping on any purchase whose annual premium exceeds one month of income (CLAUDE.md layer F)."
+      },
+      "copay_pct_red_flag": {
+        "value": 20,
+        "unit": "% co-payment per claim",
+        "source_type": "assumption",
+        "source": "Assumption: co-pay above 20% of every claim is flagged as heavy."
+      },
+      "specific_illness_wait_months_red_flag": {
+        "value": 24,
+        "unit": "months",
+        "source_type": "assumption",
+        "source": "Assumption: specific-illness waiting periods longer than 24 months are flagged as long."
+      },
+      "initial_wait_days_standard": {
+        "value": 30,
+        "unit": "days",
+        "source_type": "assumption",
+        "source": "Assumption: 30-day initial waiting period is the market norm; longer is flagged."
+      },
+      "occupation_risk_priority": {
+        "value": {
+          "low": 3,
+          "medium": 3,
+          "high": 2
+        },
+        "unit": "priority rank for accident/disability cover",
+        "source_type": "assumption",
+        "source": "Assumption: high-risk occupations (driving, construction, field work) move accident cover up one rank."
+      },
+      "premium_to_income_threshold": {
+        "value": 0.0996,
+        "unit": "annual premiums / annual income",
+        "year": 2026,
+        "source": "IRS Rev. Proc. 2025-25: 2026 ACA employer-coverage affordability percentage (9.96%)",
+        "source_url": "https://www.irs.gov/pub/irs-drop/rp-25-25.pdf",
+        "fetched": "2026-10-23",
+        "note": "Legally applies to the employee's self-only contribution; used here as the lapse-risk flag for total premiums. Value confirmed via LCW, HUB and EY summaries of the Rev. Proc."
+      },
+      "health_oop_max_usd": {
+        "value": {
+          "individual": 10600,
+          "family": 21200
+        },
+        "unit": "USD per year",
+        "year": 2026,
+        "source": "ACA maximum annual limitation on cost sharing for plan year 2026",
+        "source_url": "https://www.healthcare.gov/glossary/out-of-pocket-maximum-limit/",
+        "fetched": "2026-10-23",
+        "note": "Confirmed via Hylant and HUB International 2026 summaries ($10,600 self-only / $21,200 other)."
+      },
+      "protection_score_weights": {
+        "value": {
+          "health": 0.45,
+          "life": 0.25,
+          "affordability": 0.2,
+          "red_flags": 0.1
+        },
+        "unit": "weights summing to 1",
+        "source_type": "assumption",
+        "source": "Assumption reflecting the binding constraint per region (CLAUDE.md section 2): cost in the USA, adequacy and mis-selling in India, affordability in Kenya."
+      },
+      "free_look_days": {
+        "value": {
+          "min": 10,
+          "max": 30
+        },
+        "unit": "days",
+        "year": 2024,
+        "source": "NAIC model law chart LI-30 (life insurance disclosure provisions): state free-look periods",
+        "source_url": "https://content.naic.org/sites/default/files/model-law-chart-li-30-life-insurance-disclosure-provisions.pdf",
+        "fetched": "2026-10-23",
+        "note": "Set by state law; 10 days is the common minimum, many states require 30 days for seniors or replacements. ACA health plans have no free look; use the plan's cancellation rules."
+      },
+      "disability_income_replacement": {
+        "value": 0.6,
+        "unit": "share of annual earnings",
+        "year": 2014,
+        "source": "BLS National Compensation Survey, Beyond the Numbers 'Disability insurance plans' (2014 data): median long-term disability benefit is 60% of annual earnings",
+        "source_url": "https://www.bls.gov/opub/btn/volume-4/disability-insurance-plans.htm",
+        "fetched": "2026-10-23"
+      },
+      "motor_third_party": {
+        "value": {
+          "mandatory": true,
+          "exception": "New Hampshire (financial-responsibility rule instead of a mandate)"
+        },
+        "unit": "rule",
+        "year": 2026,
+        "source": "State auto insurance laws; New Hampshire is the only state without a general mandate",
+        "source_url": "https://insurify.com/car-insurance/new-hampshire/minimum-requirements/",
+        "fetched": "2026-10-23",
+        "note": "Secondary source; minimum liability limits vary by state."
+      }
+    },
+    "term_life": {
+      "smoker_mortality_ratio": {
+        "value": {
+          "male": 2.8,
+          "female": 3.0
+        },
+        "unit": "all-cause death rate, current vs never smokers",
+        "year": 2013,
+        "source": "Jha P et al., 21st-Century Hazards of Smoking and Benefits of Cessation in the United States, NEJM 2013;368:341-50 (PMID 23343063)",
+        "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMsa1211128",
+        "fetched": "2026-10-23",
+        "note": "Abstract: 'hazard ratio for women, 3.0; 99% CI 2.7 to 3.3; hazard ratio for men, 2.8; 99% CI 2.4 to 3.1', ages 25-79. US cohort, applied to all three countries."
+      },
+      "life_loss_ratio": {
+        "value": 0.65,
+        "unit": "expected claims / premium",
+        "sensitivity": {
+          "low": 0.55,
+          "high": 0.75
+        },
+        "source_type": "assumption",
+        "source": "Assumption: no regulator publishes a term-life loss ratio for these markets (IRDAI and IRA report claim settlement ratios, which measure something else). Premiums are calibrated to market quotes, so this splits the premium between claims and loading but does not change the fitted premium; see reports/results.md."
+      },
+      "insured_mortality_factor": {
+        "value": 0.2667,
+        "unit": "multiplier on WHO population mortality",
+        "source_type": "calibration",
+        "source": "Fitted by src/validate_term.py: scales WHO population mortality to insured-lives mortality so premiums match the quotes in fitted_on (geometric-mean fit).",
+        "fitted_on": [
+          "UST-1",
+          "UST-2",
+          "UST-3"
+        ],
+        "quotes_file": "data/term_quotes.json",
+        "fitted": "2026-10-23"
+      },
+      "policy_fee": {
+        "value": 60,
+        "unit": "USD per policy per year",
+        "source_type": "assumption",
+        "source": "Assumption: fixed yearly admin cost per policy (expense loading), roughly USD 6-60. Small next to typical premiums; shown separately in every quote's assumptions."
+      }
+    },
+    "metal_tier_factor": {
+      "value": {
+        "bronze": 0.7296,
+        "silver": 1.0,
+        "gold": 0.984,
+        "platinum": 1.107
+      },
+      "unit": "annual premium ratio vs benchmark silver",
+      "year": 2026,
+      "source": "KFF State Health Facts, Average Marketplace Premiums by Metal Tier, 2026 (United States row); platinum = gold x AV ratio 0.90/0.80 (45 CFR 156.140), derived",
+      "source_url": "https://www.kff.org/affordable-care-act/state-indicator/average-marketplace-premiums-by-metal-tier/",
+      "fetched": "2026-10-23",
+      "note": "Market prices, not actuarial value: silver plans are 'silver-loaded' with the cost of cost-sharing reductions, so lowest-cost gold ($615) costs about the same as benchmark silver ($625). Pure AV ratios would be bronze 0.857, silver 1.000, gold 1.143, platinum 1.286.",
+      "actuarial_value": {
+        "bronze": 0.6,
+        "silver": 0.7,
+        "gold": 0.8,
+        "platinum": 0.9
+      },
+      "standard_silver_deductible_usd": 5304,
+      "standard_silver_deductible_source_url": "https://www.kff.org/affordable-care-act/what-we-know-so-far-about-2026-aca-marketplace-enrollment-premiums-and-deductibles/"
+    }
+  },
+  "IND": {
+    "name": "India",
+    "currency": "INR",
+    "symbol": "₹",
+    "worldbank": {
+      "health_spend_per_capita_usd": {
+        "value": 84.68669891,
+        "year": 2023,
+        "unit": "SH.XPD.CHEX.PC.CD",
+        "source": "World Bank WDI, indicator SH.XPD.CHEX.PC.CD",
+        "source_url": "https://api.worldbank.org/v2/country/IND/indicator/SH.XPD.CHEX.PC.CD?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "out_of_pocket_pct_health_spend": {
+        "value": 43.88510513,
+        "year": 2023,
+        "unit": "SH.XPD.OOPC.CH.ZS",
+        "source": "World Bank WDI, indicator SH.XPD.OOPC.CH.ZS",
+        "source_url": "https://api.worldbank.org/v2/country/IND/indicator/SH.XPD.OOPC.CH.ZS?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "cpi_inflation_pct": {
+        "value": 2.39884954182294,
+        "year": 2025,
+        "unit": "FP.CPI.TOTL.ZG",
+        "source": "World Bank WDI, indicator FP.CPI.TOTL.ZG",
+        "source_url": "https://api.worldbank.org/v2/country/IND/indicator/FP.CPI.TOTL.ZG?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "gdp_per_capita_usd": {
+        "value": 2702.47987141553,
+        "year": 2025,
+        "unit": "NY.GDP.PCAP.CD",
+        "source": "World Bank WDI, indicator NY.GDP.PCAP.CD",
+        "source_url": "https://api.worldbank.org/v2/country/IND/indicator/NY.GDP.PCAP.CD?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "ppp_conversion_factor_lcu_per_intl_usd": {
+        "value": 20.0886288014602,
+        "year": 2025,
+        "unit": "PA.NUS.PPP",
+        "source": "World Bank WDI, indicator PA.NUS.PPP",
+        "source_url": "https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.PPP?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "wb_official_fx_lcu_per_usd": {
+        "value": 87.1584483507393,
+        "year": 2025,
+        "unit": "PA.NUS.FCRF",
+        "source": "World Bank WDI, indicator PA.NUS.FCRF",
+        "source_url": "https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.FCRF?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "wb_fx_lcu_per_usd_health_year": {
+        "value": 82.5992764460784,
+        "year": 2023,
+        "unit": "PA.NUS.FCRF",
+        "source": "World Bank WDI, indicator PA.NUS.FCRF",
+        "source_url": "https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.FCRF?format=json&date=2023",
+        "fetched": "2026-10-23"
+      }
+    },
+    "medical_inflation_pct": {
+      "value": 12.9,
+      "unit": "% per year",
+      "year": 2026,
+      "source": "WTW 2026 Global Medical Trends Survey",
+      "source_url": "https://www.wtwco.com/en-cm/insights/2025/10/2026-global-medical-trends-survey",
+      "fetched": "2026-10-23",
+      "note": "WTW 2026 Global Medical Trends Survey, Figure 4 (p.8-10), gross medical trend projected for 2026. Copy of the report PDF read at https://www.moncey-assurances.com/doc/TW-2026.pdf. This is insurer-reported medical cost trend (price + utilisation), not a consumer price index."
+    },
+    "loss_ratio": {
+      "value": 0.6806,
+      "unit": "claims / premium",
+      "year": 2025,
+      "source": "IRDAI Annual Report 2024-25, Table I.14 (segment-wise incurred claims ratio), Health, standalone health insurers",
+      "source_url": "https://lifeinscouncil.org/component/IRDAI%20Annual%20Report%202024-25.pdf",
+      "fetched": "2026-10-23",
+      "note": "FY2024-25. Standalone health insurers (68.06%) used because they dominate retail individual/family policies; the all-insurer health ICR is 85.34% (public sector 99.84%, private general 83.46%), driven by group and government business."
+    },
+    "loss_ratio_all_insurers": {
+      "value": 0.8534,
+      "unit": "claims / premium",
+      "year": 2025,
+      "source": "IRDAI Annual Report 2024-25, Table I.14, Health, all insurers",
+      "source_url": "https://lifeinscouncil.org/component/IRDAI%20Annual%20Report%202024-25.pdf",
+      "fetched": "2026-10-23"
+    },
+    "policy_interest_rate_pct": {
+      "value": 5.5,
+      "unit": "% per year",
+      "year": 2026,
+      "source": "RBI Monetary Policy Statement 2026-27, MPC resolution 5-7 Oct 2026",
+      "source_url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63742",
+      "fetched": "2026-10-23",
+      "note": "Policy repo rate raised 25 bps to 5.50%."
+    },
+    "fx_lcu_per_usd": {
+      "value": 94.96,
+      "unit": "INR per USD",
+      "year": 2026,
+      "source": "Federal Reserve H.10 noon buying rate (FRED series DEXINUS)",
+      "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXINUS",
+      "fetched": "2026-10-23",
+      "note": "Observation date 2026-10-16."
+    },
+    "age_band_loading": {
+      "value": {
+        "0-44": 1.0,
+        "45-59": 1.0,
+        "60+": 1.0
+      },
+      "unit": "multiplier on expected claims / loss ratio",
+      "source": "Model assumption (neutral). See reports/results.md, calibration section.",
+      "source_type": "assumption"
+    },
+    "child_cost_ratio": {
+      "value": 0.8379,
+      "unit": "child (0-14) cost / age-18 cost",
+      "year": 2018,
+      "source": "Derived from CMS federal default age curve (0-14: 0.765, 18: 0.913)",
+      "source_url": "https://www.cms.gov/CCIIO/Resources/Regulations-and-Guidance/Downloads/Final-Guidance-Regarding-Age-Curves-and-State-Reporting-12-16-16.pdf",
+      "fetched": "2026-10-23"
+    },
+    "calibration_factor": {
+      "value": 2.1094,
+      "unit": "multiplier",
+      "source_type": "calibration",
+      "source": "Fitted by src/validate.py: geometric mean of (published quote / uncalibrated model premium) over the quotes listed in fitted_on. Adjusts only the calibration layer; the ML model is unchanged.",
+      "fitted_on": [
+        "IN-1",
+        "IN-2",
+        "IN-3"
+      ],
+      "quotes_file": "data/validation_quotes.json",
+      "reason": "National health spend per person averages over everyone, including the many who use low-cost public facilities or skip care. People with private health insurance mostly use private hospitals, which cost several times more, so the raw scaling understates insured claims.",
+      "fitted": "2026-10-23"
+    },
+    "floater_addon_factor": {
+      "value": 0.5085,
+      "unit": "share of each extra member's premium",
+      "year": 2026,
+      "source": "Care Supreme prospectus (UIN CHIHLIP27061V032627, Apr 2026), Annexure V premium illustrations, Zone 1, Rs 5 L: floater vs individual premiums. Ages 51+46: 32,881 vs 23,450 + 18,546 (0.509); 60+56+17: 50,727 vs 31,113 + 31,113 + 5,046 (0.542); 64+61: 54,509 vs 36,965 x 2 (0.475). Mean.",
+      "source_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---prospectus-cum-sales-literature.pdf",
+      "fetched": "2026-10-23"
+    },
+    "advisor": {
+      "profile_completeness_threshold": {
+        "value": 0.7,
+        "unit": "share of core profile fields answered",
+        "source_type": "assumption",
+        "source": "Assumption: no recommendation until at least 70% of the core Layer-A fields are known (CLAUDE.md section 6)."
+      },
+      "cooling_off_premium_months_of_income": {
+        "value": 1.0,
+        "unit": "annual premium / monthly income",
+        "source_type": "assumption",
+        "source": "Assumption: suggest sleeping on any purchase whose annual premium exceeds one month of income (CLAUDE.md layer F)."
+      },
+      "copay_pct_red_flag": {
+        "value": 20,
+        "unit": "% co-payment per claim",
+        "source_type": "assumption",
+        "source": "Assumption: co-pay above 20% of every claim is flagged as heavy."
+      },
+      "specific_illness_wait_months_red_flag": {
+        "value": 24,
+        "unit": "months",
+        "source_type": "assumption",
+        "source": "Assumption: specific-illness waiting periods longer than 24 months are flagged as long."
+      },
+      "initial_wait_days_standard": {
+        "value": 30,
+        "unit": "days",
+        "source_type": "assumption",
+        "source": "Assumption: 30-day initial waiting period is the market norm; longer is flagged."
+      },
+      "occupation_risk_priority": {
+        "value": {
+          "low": 3,
+          "medium": 3,
+          "high": 2
+        },
+        "unit": "priority rank for accident/disability cover",
+        "source_type": "assumption",
+        "source": "Assumption: high-risk occupations (driving, construction, field work) move accident cover up one rank."
+      },
+      "premium_to_income_threshold": {
+        "value": 0.1,
+        "unit": "annual premiums / annual income",
+        "source_type": "assumption",
+        "source": "Assumption by analogy with WHO SDG 3.8.2, which treats household health spending above 10% of consumption as catastrophic; no regulator sets a premium-to-income ceiling here.",
+        "note": "WHO financial protection: https://www.who.int/data/gho/data/themes/topics/financial-protection"
+      },
+      "health_cover_target": {
+        "value": {
+          "individual": 1000000,
+          "family_multiplier": 1.5
+        },
+        "unit": "INR sum insured",
+        "source_type": "assumption",
+        "source": "Assumption: Rs 10 lakh per person (the sum-insured curve's reference point and the cover level broker comparisons centre on), x1.5 for a floater of 3+ members. Grown with medical inflation for the year-10 view."
+      },
+      "protection_score_weights": {
+        "value": {
+          "health": 0.35,
+          "life": 0.3,
+          "affordability": 0.15,
+          "red_flags": 0.2
+        },
+        "unit": "weights summing to 1",
+        "source_type": "assumption",
+        "source": "Assumption reflecting the binding constraint per region (CLAUDE.md section 2): cost in the USA, adequacy and mis-selling in India, affordability in Kenya."
+      },
+      "free_look_days": {
+        "value": 30,
+        "unit": "days",
+        "year": 2024,
+        "source": "IRDAI Master Circular on Protection of Policyholders' Interests (5 Sep 2024): 30-day free look for life and health policies (was 15 days)",
+        "source_url": "https://www.gicouncil.in/news-media/gic-in-the-news/how-irdai-s-new-master-circular-help-life-health-insurance-policyholders/",
+        "fetched": "2026-10-23",
+        "note": "Secondary summary; general (motor) policies not confirmed."
+      },
+      "ped_wait_months_max": {
+        "value": 36,
+        "unit": "months",
+        "year": 2024,
+        "source": "IRDAI Master Circular on Health Insurance Business, 29 May 2024 (IRDAI/HLT/CIR/MISC/77/05/2024): maximum pre-existing-disease waiting period cut from 48 to 36 months; moratorium cut from 8 to 5 years",
+        "source_url": "https://nyvo.in/health-insurance/irdai-master-circular-2024",
+        "fetched": "2026-10-23",
+        "note": "Secondary summary of the circular."
+      },
+      "accident_cover_multiple": {
+        "value": {
+          "min": 5,
+          "max": 10
+        },
+        "unit": "x annual income",
+        "year": 2024,
+        "source": "Insurer underwriting caps for personal accident: SBI General caps death/PTD cover at 120x monthly or 10x annual gross income; Business Standard quotes underwriters suggesting 60-100x monthly income",
+        "source_url": "https://content.sbigeneral.in/uploads/48a081ad76ca416b9acf1b2efeb56f21.pdf",
+        "fetched": "2026-10-23"
+      },
+      "motor_third_party": {
+        "value": {
+          "mandatory": true,
+          "law": "Motor Vehicles Act 1988, section 146"
+        },
+        "unit": "rule",
+        "year": 1988,
+        "source": "Motor Vehicles Act 1988 s.146: no motor vehicle may be used in a public place without third-party insurance",
+        "source_url": "https://www.bajajallianz.com/blog/motor-insurance-articles/zero-depreciation-car-insurance-after-5-years.html",
+        "fetched": "2026-10-23",
+        "note": "Statute summarised by insurer material; own-damage cover is optional."
+      },
+      "motor_idv_depreciation_pct": {
+        "value": {
+          "0.5": 5,
+          "1": 15,
+          "2": 20,
+          "3": 30,
+          "4": 40,
+          "5": 50
+        },
+        "unit": "% of ex-showroom price, by max vehicle age (years)",
+        "year": 2024,
+        "source": "India Motor Tariff General Regulation 8 IDV depreciation schedule (insurer copy)",
+        "source_url": "https://www.iffcotokio.co.in/content/dam/iffcotokio/iffco-pdf/sites/default/files/IDV-Depreciation-Table.pdf",
+        "fetched": "2026-10-23",
+        "note": "Beyond 5 years IDV is agreed between insurer and insured."
+      },
+      "motor_zero_dep_max_age_years": {
+        "value": 5,
+        "unit": "years",
+        "year": 2026,
+        "source": "Zero-depreciation add-on is typically sold for vehicles up to 5 years old (some insurers 7)",
+        "source_url": "https://www.91wheels.com/buyers-guide/zero-depreciation-car-insurance-explained-benefits-limitations-claim-rules-and-whether-its-worth-it",
+        "fetched": "2026-10-23",
+        "note": "Insurer practice, not regulation."
+      }
+    },
+    "term_life": {
+      "smoker_mortality_ratio": {
+        "value": {
+          "male": 2.8,
+          "female": 3.0
+        },
+        "unit": "all-cause death rate, current vs never smokers",
+        "year": 2013,
+        "source": "Jha P et al., 21st-Century Hazards of Smoking and Benefits of Cessation in the United States, NEJM 2013;368:341-50 (PMID 23343063)",
+        "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMsa1211128",
+        "fetched": "2026-10-23",
+        "note": "Abstract: 'hazard ratio for women, 3.0; 99% CI 2.7 to 3.3; hazard ratio for men, 2.8; 99% CI 2.4 to 3.1', ages 25-79. US cohort, applied to all three countries."
+      },
+      "life_loss_ratio": {
+        "value": 0.65,
+        "unit": "expected claims / premium",
+        "sensitivity": {
+          "low": 0.55,
+          "high": 0.75
+        },
+        "source_type": "assumption",
+        "source": "Assumption: no regulator publishes a term-life loss ratio for these markets (IRDAI and IRA report claim settlement ratios, which measure something else). Premiums are calibrated to market quotes, so this splits the premium between claims and loading but does not change the fitted premium; see reports/results.md."
+      },
+      "insured_mortality_factor": {
+        "value": 0.1726,
+        "unit": "multiplier on WHO population mortality",
+        "source_type": "calibration",
+        "source": "Fitted by src/validate_term.py: scales WHO population mortality to insured-lives mortality so premiums match the quotes in fitted_on (geometric-mean fit).",
+        "fitted_on": [
+          "INT-1",
+          "INT-2",
+          "INT-3"
+        ],
+        "quotes_file": "data/term_quotes.json",
+        "fitted": "2026-10-23"
+      },
+      "policy_fee": {
+        "value": 600,
+        "unit": "INR per policy per year",
+        "source_type": "assumption",
+        "source": "Assumption: fixed yearly admin cost per policy (expense loading), roughly USD 6-60. Small next to typical premiums; shown separately in every quote's assumptions."
+      }
+    },
+    "sum_insured_curve": {
+      "value": {
+        "form": "power",
+        "coef": {
+          "b": 0.37359
+        },
+        "reference_sum_insured": 1000000,
+        "fitted_range": [
+          500000,
+          10000000
+        ]
+      },
+      "unit": "premium(SI) = premium(SI_ref) x exp(f(ln(SI/SI_ref)))",
+      "source_type": "calibration",
+      "source": "Fitted by src/fit_si_curve.py on same-plan, same-profile premiums at different sums insured (series intercepts free, curve shared). Form chosen by leave-one-series-out error.",
+      "fitted_on": [
+        "INSI-1",
+        "INSI-2",
+        "INSI-3",
+        "INSI-4",
+        "INSI-5",
+        "INSI-6",
+        "INSI-7",
+        "INSI-8",
+        "INSI-9",
+        "INSI-10"
+      ],
+      "quotes_file": "data/sum_insured_quotes.json",
+      "fit_stats": {
+        "power": {
+          "in_sample_mape_pct": 11.27,
+          "loso_mape_pct": 12.51,
+          "monotone": true
+        },
+        "quad_log": {
+          "in_sample_mape_pct": 11.35,
+          "loso_mape_pct": 12.66,
+          "monotone": true
+        },
+        "power_age": {
+          "in_sample_mape_pct": 10.98,
+          "loso_mape_pct": 12.55,
+          "monotone": true
+        }
+      },
+      "per_series_power_slope": {
+        "INSI-1": 0.137,
+        "INSI-2": 0.123,
+        "INSI-3": 0.139,
+        "INSI-4": 0.338,
+        "INSI-5": 0.428,
+        "INSI-6": 0.43,
+        "INSI-7": 0.376,
+        "INSI-8": 0.338,
+        "INSI-9": 0.376,
+        "INSI-10": 0.395
+      },
+      "sensitivity_chart_series_only": {
+        "series": [
+          "INSI-1",
+          "INSI-2",
+          "INSI-3",
+          "INSI-4"
+        ],
+        "power_slope": 0.184,
+        "range": "15L-50L only"
+      },
+      "fitted": "2026-10-23"
+    }
+  },
+  "KEN": {
+    "name": "Kenya",
+    "currency": "KES",
+    "symbol": "KSh",
+    "worldbank": {
+      "health_spend_per_capita_usd": {
+        "value": 84.958992,
+        "year": 2023,
+        "unit": "SH.XPD.CHEX.PC.CD",
+        "source": "World Bank WDI, indicator SH.XPD.CHEX.PC.CD",
+        "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/SH.XPD.CHEX.PC.CD?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "out_of_pocket_pct_health_spend": {
+        "value": 24.24565315,
+        "year": 2023,
+        "unit": "SH.XPD.OOPC.CH.ZS",
+        "source": "World Bank WDI, indicator SH.XPD.OOPC.CH.ZS",
+        "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/SH.XPD.OOPC.CH.ZS?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "cpi_inflation_pct": {
+        "value": 4.0693076061457,
+        "year": 2025,
+        "unit": "FP.CPI.TOTL.ZG",
+        "source": "World Bank WDI, indicator FP.CPI.TOTL.ZG",
+        "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/FP.CPI.TOTL.ZG?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "gdp_per_capita_usd": {
+        "value": 2362.86091198611,
+        "year": 2025,
+        "unit": "NY.GDP.PCAP.CD",
+        "source": "World Bank WDI, indicator NY.GDP.PCAP.CD",
+        "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/NY.GDP.PCAP.CD?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "ppp_conversion_factor_lcu_per_intl_usd": {
+        "value": 43.5471478663385,
+        "year": 2025,
+        "unit": "PA.NUS.PPP",
+        "source": "World Bank WDI, indicator PA.NUS.PPP",
+        "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/PA.NUS.PPP?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "wb_official_fx_lcu_per_usd": {
+        "value": 129.302572099377,
+        "year": 2025,
+        "unit": "PA.NUS.FCRF",
+        "source": "World Bank WDI, indicator PA.NUS.FCRF",
+        "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/PA.NUS.FCRF?format=json&mrnev=1",
+        "fetched": "2026-10-23"
+      },
+      "wb_fx_lcu_per_usd_health_year": {
+        "value": 139.846383759616,
+        "year": 2023,
+        "unit": "PA.NUS.FCRF",
+        "source": "World Bank WDI, indicator PA.NUS.FCRF",
+        "source_url": "https://api.worldbank.org/v2/country/KEN/indicator/PA.NUS.FCRF?format=json&date=2023",
+        "fetched": "2026-10-23"
+      }
+    },
+    "medical_inflation_pct": {
+      "value": 9.5,
+      "unit": "% per year",
+      "year": 2026,
+      "source": "WTW 2026 Global Medical Trends Survey",
+      "source_url": "https://www.wtwco.com/en-cm/insights/2025/10/2026-global-medical-trends-survey",
+      "fetched": "2026-10-23",
+      "note": "WTW 2026 Global Medical Trends Survey, Figure 4 (p.8-10), gross medical trend projected for 2026. Copy of the report PDF read at https://www.moncey-assurances.com/doc/TW-2026.pdf. This is insurer-reported medical cost trend (price + utilisation), not a consumer price index."
+    },
+    "loss_ratio": {
+      "value": 0.746,
+      "unit": "net incurred claims / net earned premium",
+      "year": 2022,
+      "source": "IRA Kenya, Insurance Industry Annual Report 2022 (pub. Sept 2023), net incurred claims ratios section (PDF p.58, Table 27)",
+      "source_url": "https://libraryir.parliament.go.ke/bitstreams/2b2982e3-7efa-4c8c-89b9-558694bb988f/download",
+      "fetched": "2026-10-23",
+      "note": "Verified in the report PDF (Parliament of Kenya library copy): 'Motor Private, Medical and Motor Commercial classes registered loss ratios above the global benchmark at 80.3%, 74.6% and 70.6% respectively.' Latest year verified from a primary document; see loss_ratio_sensitivity for newer, unverified figures."
+    },
+    "loss_ratio_sensitivity": {
+      "value": {
+        "low": 0.746,
+        "mid": 0.81,
+        "high": 1.018
+      },
+      "unit": "net incurred claims / net earned premium",
+      "source_type": "assumption",
+      "source": "Sensitivity range. low = IRA 2022 annual report (verified). mid = IRA Q2-2025 industry release, medical 81.0% (search-indexed text; ira.go.ke blocks download). high = 2025 medical-only ratio 101.8% from the 2026 Kenya Medical Industry Analytics report as summarised by Willow Health Media (secondary).",
+      "source_url": "https://willowhealthmedia.org/private-health-insurance-in-kenya-same-ward-same-procedure-different-prices/",
+      "note": "Premiums are calibrated to market quotes, so changing the loss ratio changes the calibration factor and the expected-claims figure, not the fitted premium."
+    },
+    "policy_interest_rate_pct": {
+      "value": 8.75,
+      "unit": "% per year",
+      "year": 2026,
+      "source": "Central Bank of Kenya MPC press release, 7 Oct 2026",
+      "source_url": "https://www.centralbank.go.ke/2026/10/07/mpc-retains-the-cbr-at-8-75-percent-3/",
+      "fetched": "2026-10-23",
+      "note": "Central Bank Rate retained at 8.75%."
+    },
+    "fx_lcu_per_usd": {
+      "value": 129.91,
+      "unit": "KES per USD",
+      "year": 2026,
+      "source": "Central Bank of Kenya daily KES exchange rates",
+      "source_url": "https://www.centralbank.go.ke/home/forex-2/",
+      "fetched": "2026-10-23",
+      "note": "US dollar rate posted 22-10-2026."
+    },
+    "age_band_loading": {
+      "value": {
+        "0-44": 1.0,
+        "45-59": 1.0,
+        "60+": 1.0
+      },
+      "unit": "multiplier on expected claims / loss ratio",
+      "source": "Model assumption (neutral). See reports/results.md, calibration section.",
+      "source_type": "assumption"
+    },
+    "child_cost_ratio": {
+      "value": 0.8379,
+      "unit": "child (0-14) cost / age-18 cost",
+      "year": 2018,
+      "source": "Derived from CMS federal default age curve (0-14: 0.765, 18: 0.913)",
+      "source_url": "https://www.cms.gov/CCIIO/Resources/Regulations-and-Guidance/Downloads/Final-Guidance-Regarding-Age-Curves-and-State-Reporting-12-16-16.pdf",
+      "fetched": "2026-10-23"
+    },
+    "calibration_factor": {
+      "value": 5.5463,
+      "unit": "multiplier",
+      "source_type": "calibration",
+      "source": "Fitted by src/validate.py: geometric mean of (published quote / uncalibrated model premium) over the quotes listed in fitted_on. Adjusts only the calibration layer; the ML model is unchanged.",
+      "fitted_on": [
+        "KE-1",
+        "KE-2",
+        "KE-3",
+        "KE-4",
+        "KE-5",
+        "KE-6"
+      ],
+      "quotes_file": "data/validation_quotes.json",
+      "reason": "Same effect as India, stronger: the US model puts a healthy 30-year-old at about a third of national spend per person, but Kenyan insurers price the same person at about 2.5x Kenya's spend per person, because private cover buyers use private hospitals and the plans include extras (maternity, regional cover, critical-illness lump sums).",
+      "fitted": "2026-10-23"
+    },
+    "floater_addon_factor": {
+      "value": 0.692,
+      "unit": "share of each extra member's premium",
+      "year": 2022,
+      "source": "Mean of two Kenyan insurer tables at KES 1M: AAR SME family shared M+1 39,073 vs individual 31-40 24,059 (0.624; 2017); Old Mutual AfyaImara spouse 26,785 vs principal 35,223, ages 30-40 (0.760; 2022)",
+      "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf",
+      "fetched": "2026-10-23",
+      "note": "Same brochures as validation quotes KE-3 / KE-6, so Kenya's family validation is not fully independent; the AAR M+3 row (= KE-6) was not used. Old Mutual: https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    "advisor": {
+      "profile_completeness_threshold": {
+        "value": 0.7,
+        "unit": "share of core profile fields answered",
+        "source_type": "assumption",
+        "source": "Assumption: no recommendation until at least 70% of the core Layer-A fields are known (CLAUDE.md section 6)."
+      },
+      "cooling_off_premium_months_of_income": {
+        "value": 1.0,
+        "unit": "annual premium / monthly income",
+        "source_type": "assumption",
+        "source": "Assumption: suggest sleeping on any purchase whose annual premium exceeds one month of income (CLAUDE.md layer F)."
+      },
+      "copay_pct_red_flag": {
+        "value": 20,
+        "unit": "% co-payment per claim",
+        "source_type": "assumption",
+        "source": "Assumption: co-pay above 20% of every claim is flagged as heavy."
+      },
+      "specific_illness_wait_months_red_flag": {
+        "value": 24,
+        "unit": "months",
+        "source_type": "assumption",
+        "source": "Assumption: specific-illness waiting periods longer than 24 months are flagged as long."
+      },
+      "initial_wait_days_standard": {
+        "value": 30,
+        "unit": "days",
+        "source_type": "assumption",
+        "source": "Assumption: 30-day initial waiting period is the market norm; longer is flagged."
+      },
+      "occupation_risk_priority": {
+        "value": {
+          "low": 3,
+          "medium": 3,
+          "high": 2
+        },
+        "unit": "priority rank for accident/disability cover",
+        "source_type": "assumption",
+        "source": "Assumption: high-risk occupations (driving, construction, field work) move accident cover up one rank."
+      },
+      "premium_to_income_threshold": {
+        "value": 0.1,
+        "unit": "annual premiums / annual income",
+        "source_type": "assumption",
+        "source": "Assumption by analogy with WHO SDG 3.8.2, which treats household health spending above 10% of consumption as catastrophic; no regulator sets a premium-to-income ceiling here.",
+        "note": "WHO financial protection: https://www.who.int/data/gho/data/themes/topics/financial-protection"
+      },
+      "health_cover_target": {
+        "value": {
+          "individual": 1000000,
+          "family_multiplier": 1.5
+        },
+        "unit": "KES inpatient limit",
+        "source_type": "assumption",
+        "source": "Assumption: KES 1M inpatient limit (Old Mutual AfyaImara option II and the sum-insured curve's reference point), x1.5 for families of 3+. SHA cover is counted separately as the base layer."
+      },
+      "protection_score_weights": {
+        "value": {
+          "health": 0.4,
+          "life": 0.2,
+          "affordability": 0.3,
+          "red_flags": 0.1
+        },
+        "unit": "weights summing to 1",
+        "source_type": "assumption",
+        "source": "Assumption reflecting the binding constraint per region (CLAUDE.md section 2): cost in the USA, adequacy and mis-selling in India, affordability in Kenya."
+      },
+      "free_look_days": {
+        "value": 30,
+        "unit": "days",
+        "year": 2026,
+        "source": "Insurance Regulatory Authority FAQ: a life policy can be cancelled within 30 days of receiving the policy document for a refund of premium less withholding tax",
+        "source_url": "https://ira.go.ke/index.php/about-us/faq-s",
+        "fetched": "2026-10-23",
+        "note": "Stated for life policies; general policies not confirmed."
+      },
+      "accident_cover_multiple": {
+        "value": {
+          "min": 8,
+          "max": 8
+        },
+        "unit": "x annual income",
+        "year": 2007,
+        "source": "Work Injury Benefits Act 2007 (No. 13 of 2007): permanent total disablement compensated at 96 months' earnings",
+        "source_url": "https://wageindicator.org/en-ke/work-in-kenya/labour-law/sick-leave/work-injury-benefits",
+        "fetched": "2026-10-23",
+        "note": "Statutory employer benchmark used as the income-replacement target. Sources disagree on the death benefit (60 vs 96 months), so only the disablement figure is used."
+      },
+      "motor_third_party": {
+        "value": {
+          "mandatory": true,
+          "law": "Insurance (Motor Vehicles Third Party Risks) Act, Cap. 405, s.4(1)"
+        },
+        "unit": "rule",
+        "year": 2022,
+        "source": "Cap. 405 s.4(1): no person may use a motor vehicle on a road without third-party cover; IRA confirms it is compulsory",
+        "source_url": "https://new.kenyalaw.org/akn/ke/act/1945/12",
+        "fetched": "2026-10-23"
+      }
+    },
+    "term_life": {
+      "smoker_mortality_ratio": {
+        "value": {
+          "male": 2.8,
+          "female": 3.0
+        },
+        "unit": "all-cause death rate, current vs never smokers",
+        "year": 2013,
+        "source": "Jha P et al., 21st-Century Hazards of Smoking and Benefits of Cessation in the United States, NEJM 2013;368:341-50 (PMID 23343063)",
+        "source_url": "https://www.nejm.org/doi/full/10.1056/NEJMsa1211128",
+        "fetched": "2026-10-23",
+        "note": "Abstract: 'hazard ratio for women, 3.0; 99% CI 2.7 to 3.3; hazard ratio for men, 2.8; 99% CI 2.4 to 3.1', ages 25-79. US cohort, applied to all three countries."
+      },
+      "life_loss_ratio": {
+        "value": 0.65,
+        "unit": "expected claims / premium",
+        "sensitivity": {
+          "low": 0.55,
+          "high": 0.75
+        },
+        "source_type": "assumption",
+        "source": "Assumption: no regulator publishes a term-life loss ratio for these markets (IRDAI and IRA report claim settlement ratios, which measure something else). Premiums are calibrated to market quotes, so this splits the premium between claims and loading but does not change the fitted premium; see reports/results.md."
+      },
+      "insured_mortality_factor": {
+        "value": 0.4267,
+        "unit": "multiplier on WHO population mortality",
+        "source_type": "calibration",
+        "source": "Fitted by src/validate_term.py: scales WHO population mortality to insured-lives mortality so premiums match the quotes in fitted_on (geometric-mean fit).",
+        "fitted_on": [
+          "KET-1",
+          "KET-2",
+          "KET-3"
+        ],
+        "quotes_file": "data/term_quotes.json",
+        "fitted": "2026-10-23"
+      },
+      "policy_fee": {
+        "value": 600,
+        "unit": "KES per policy per year",
+        "source_type": "assumption",
+        "source": "Assumption: fixed yearly admin cost per policy (expense loading), roughly USD 6-60. Small next to typical premiums; shown separately in every quote's assumptions."
+      }
+    },
+    "sum_insured_curve": {
+      "value": {
+        "form": "quad_log",
+        "coef": {
+          "b1": 0.16506,
+          "b2": 0.0436
+        },
+        "reference_sum_insured": 1000000,
+        "fitted_range": [
+          500000,
+          10000000
+        ]
+      },
+      "unit": "premium(SI) = premium(SI_ref) x exp(f(ln(SI/SI_ref)))",
+      "source_type": "calibration",
+      "source": "Fitted by src/fit_si_curve.py on same-plan, same-profile premiums at different sums insured (series intercepts free, curve shared). Form chosen by leave-one-series-out error.",
+      "fitted_on": [
+        "KESI-1",
+        "KESI-2",
+        "KESI-3",
+        "KESI-4",
+        "KESI-5",
+        "KESI-6",
+        "KESI-7",
+        "KESI-8",
+        "KESI-9",
+        "KESI-10",
+        "KESI-11",
+        "KESI-12",
+        "KESI-13"
+      ],
+      "quotes_file": "data/sum_insured_quotes.json",
+      "fit_stats": {
+        "power": {
+          "in_sample_mape_pct": 8.7,
+          "loso_mape_pct": 8.96,
+          "monotone": true
+        },
+        "quad_log": {
+          "in_sample_mape_pct": 7.82,
+          "loso_mape_pct": 8.24,
+          "monotone": true
+        },
+        "power_age": {
+          "in_sample_mape_pct": 8.27,
+          "loso_mape_pct": 8.83,
+          "monotone": true
+        }
+      },
+      "per_series_power_slope": {
+        "KESI-1": 0.226,
+        "KESI-2": 0.236,
+        "KESI-3": 0.224,
+        "KESI-4": 0.182,
+        "KESI-5": 0.285,
+        "KESI-6": 0.289,
+        "KESI-7": 0.297,
+        "KESI-8": 0.211,
+        "KESI-9": 0.215,
+        "KESI-10": 0.218,
+        "KESI-11": 0.22,
+        "KESI-12": 0.221,
+        "KESI-13": 0.281
+      },
+      "fitted": "2026-10-23"
+    }
+  }
+}

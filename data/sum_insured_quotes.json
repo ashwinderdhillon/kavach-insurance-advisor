@@ -1,0 +1,177 @@
+{
+  "_meta": {
+    "description": "Published premiums for the SAME plan and SAME profile at different sums insured (India, Kenya) or metal tiers (USA). Used by src/fit_si_curve.py to fit how premium scales with cover. Only ratios within a series matter, so the quote year does not affect the fit.",
+    "series_format": "Each series is one insurer plan x one profile; points = [[sum_insured, annual_premium], ...] in local currency.",
+    "collected": "2026-10-23"
+  },
+  "IND": [
+    {
+      "id": "INSI-1", "plan": "HDFC ERGO Optima Secure+", "profile": "Individual, age 25", "age": 25,
+      "points": [[1500000, 13459], [2500000, 14389], [5000000, 15860]],
+      "quote_year": 2026, "quality": "broker table (insurer chart)",
+      "source": "Ditto (joinditto.in), HDFC ERGO Optima Secure+ review, premium table for a Delhi resident (pin 110001), published 7 Apr 2026",
+      "source_url": "https://www.joinditto.in/articles/health-insurance/hdfc-ergo-optima-secure-plus/"
+    },
+    {
+      "id": "INSI-2", "plan": "HDFC ERGO Optima Secure+", "profile": "Floater 2A (35, 35)", "age": 35,
+      "points": [[1500000, 22046], [2500000, 23526], [5000000, 25575]],
+      "quote_year": 2026, "quality": "broker table (insurer chart)",
+      "source": "Ditto, same table", "source_url": "https://www.joinditto.in/articles/health-insurance/hdfc-ergo-optima-secure-plus/"
+    },
+    {
+      "id": "INSI-3", "plan": "HDFC ERGO Optima Secure+", "profile": "Floater 2A+1C (35, 32, 5)", "age": 35,
+      "points": [[1500000, 25845], [2500000, 27819], [5000000, 30565]],
+      "quote_year": 2026, "quality": "broker table (insurer chart)",
+      "source": "Ditto, same table", "source_url": "https://www.joinditto.in/articles/health-insurance/hdfc-ergo-optima-secure-plus/"
+    },
+    {
+      "id": "INSI-4", "plan": "HDFC ERGO Optima Secure+", "profile": "Floater, parents 2A (60, 60)", "age": 60,
+      "points": [[1500000, 75609], [2500000, 87944], [5000000, 113352]],
+      "quote_year": 2026, "quality": "broker table (insurer chart)",
+      "source": "Ditto, same table", "source_url": "https://www.joinditto.in/articles/health-insurance/hdfc-ergo-optima-secure-plus/"
+    },
+    {
+      "id": "INSI-5", "plan": "Care Supreme", "profile": "Individual male 30, non-smoker, Tier-1", "age": 30,
+      "points": [[500000, 6400], [1000000, 9500], [2500000, 14600], [10000000, 23400]],
+      "quote_year": 2026, "quality": "broker table; non-10L tiers scaled by the broker from its 10L database figure",
+      "source": "nyvo.in 'Best Rs 5 lakh / 10 lakh / 25 lakh / 1 crore health insurance' pages (updated 1-20 Oct 2026). The 25L and 1Cr pages state that only the 10L figures come from nyvo's premium database and other tiers are indicative extrapolations.",
+      "source_url": "https://nyvo.in/health-insurance/best-1-crore-health-insurance",
+      "source_urls": ["https://nyvo.in/health-insurance/best-5-lakh-health-insurance", "https://nyvo.in/health-insurance/best-10-lakh-health-insurance", "https://nyvo.in/health-insurance/best-25-lakh-health-insurance", "https://nyvo.in/health-insurance/best-1-crore-health-insurance"]
+    },
+    {
+      "id": "INSI-6", "plan": "Aditya Birla Activ One Max", "profile": "Individual male 30, non-smoker, Tier-1", "age": 30,
+      "points": [[500000, 6600], [1000000, 10500], [2500000, 15100], [10000000, 24900]],
+      "quote_year": 2026, "quality": "broker table; non-10L tiers scaled by the broker",
+      "source": "nyvo.in, same four pages", "source_url": "https://nyvo.in/health-insurance/best-1-crore-health-insurance"
+    },
+    {
+      "id": "INSI-7", "plan": "HDFC ERGO Optima Secure Plus", "profile": "Individual male 30, non-smoker, Tier-1", "age": 30,
+      "points": [[1000000, 12800], [2500000, 18800], [10000000, 30600]],
+      "quote_year": 2026, "quality": "broker table; non-10L tiers scaled by the broker",
+      "source": "nyvo.in 10L / 25L / 1Cr pages (the 5L page lists Optima Secure, a different variant, so it is excluded)",
+      "source_url": "https://nyvo.in/health-insurance/best-1-crore-health-insurance"
+    },
+    {
+      "id": "INSI-8", "plan": "Care Supreme", "profile": "Individual 45, non-smoker, Tier-1", "age": 45,
+      "points": [[2500000, 25600], [10000000, 40900]],
+      "quote_year": 2026, "quality": "broker table; scaled by the broker",
+      "source": "nyvo.in 25L and 1Cr pages, age-45 column", "source_url": "https://nyvo.in/health-insurance/best-1-crore-health-insurance"
+    },
+    {
+      "id": "INSI-9", "plan": "Aditya Birla Activ One Max", "profile": "Individual 45, non-smoker, Tier-1", "age": 45,
+      "points": [[2500000, 25600], [10000000, 43100]],
+      "quote_year": 2026, "quality": "broker table; scaled by the broker",
+      "source": "nyvo.in 25L and 1Cr pages, age-45 column", "source_url": "https://nyvo.in/health-insurance/best-1-crore-health-insurance"
+    },
+    {
+      "id": "INSI-10", "plan": "HDFC ERGO Optima Secure Plus", "profile": "Individual 45, non-smoker, Tier-1", "age": 45,
+      "points": [[2500000, 30600], [10000000, 52900]],
+      "quote_year": 2026, "quality": "broker table; scaled by the broker",
+      "source": "nyvo.in 25L and 1Cr pages, age-45 column", "source_url": "https://nyvo.in/health-insurance/best-1-crore-health-insurance"
+    }
+  ],
+  "KEN": [
+    {
+      "id": "KESI-1", "plan": "Old Mutual AfyaImara Family Cover", "profile": "Principal 19-29", "age": 24,
+      "points": [[500000, 32257], [1000000, 34284], [3000000, 49172], [5000000, 53025], [10000000, 60535]],
+      "quote_year": 2022, "quality": "insurer rate table",
+      "source": "Old Mutual Kenya, AfyaImara Family Cover brochure (PDF dated Oct 2022), p.5 inpatient rates. Note: every limit includes the same KES 750,000 critical-illness lump sum and room grade rises with the limit (general ward to en-suite).",
+      "source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    {
+      "id": "KESI-2", "plan": "Old Mutual AfyaImara Family Cover", "profile": "Principal 30-40", "age": 35,
+      "points": [[500000, 33863], [1000000, 35223], [3000000, 52342], [5000000, 56437], [10000000, 64692]],
+      "quote_year": 2022, "quality": "insurer rate table",
+      "source": "Old Mutual Kenya, AfyaImara brochure, p.5", "source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    {
+      "id": "KESI-3", "plan": "Old Mutual AfyaImara Family Cover", "profile": "Principal 41-50", "age": 45,
+      "points": [[500000, 38059], [1000000, 39385], [3000000, 62185], [5000000, 62634], [10000000, 68870]],
+      "quote_year": 2022, "quality": "insurer rate table",
+      "source": "Old Mutual Kenya, AfyaImara brochure, p.5", "source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    {
+      "id": "KESI-4", "plan": "Old Mutual AfyaImara Family Cover", "profile": "Principal 51-65", "age": 58,
+      "points": [[500000, 55550], [1000000, 56704], [3000000, 76889], [5000000, 82030], [10000000, 91449]],
+      "quote_year": 2022, "quality": "insurer rate table",
+      "source": "Old Mutual Kenya, AfyaImara brochure, p.5", "source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    {
+      "id": "KESI-5", "plan": "Old Mutual AfyaImara Family Cover", "profile": "Principal 66+", "age": 68,
+      "points": [[500000, 82829], [1000000, 95227], [3000000, 142417], [5000000, 162180], [10000000, 185511]],
+      "quote_year": 2022, "quality": "insurer rate table",
+      "source": "Old Mutual Kenya, AfyaImara brochure, p.5", "source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    {
+      "id": "KESI-6", "plan": "Old Mutual AfyaImara Family Cover", "profile": "Child 0-18", "age": 9,
+      "points": [[500000, 13929], [1000000, 17102], [3000000, 26795], [5000000, 28496], [10000000, 31578]],
+      "quote_year": 2022, "quality": "insurer rate table",
+      "source": "Old Mutual Kenya, AfyaImara brochure, p.5", "source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    {
+      "id": "KESI-7", "plan": "AAR Business Medical Plan (SME), unshared", "profile": "Age band 0-17", "age": 9,
+      "points": [[500000, 12462], [1000000, 12889], [2000000, 15419], [3000000, 17150], [4000000, 18881], [5000000, 20612], [6000000, 22343], [7000000, 24074], [8000000, 25805], [9000000, 27536], [10000000, 29267]],
+      "quote_year": 2017, "quality": "insurer rate table",
+      "source": "AAR Insurance Kenya, Business Medical Plan (SME) brochure (PDF created Nov 2017), p.4 unshared inpatient rates. Every limit includes the same KES 1,000,000 personal-accident cover.",
+      "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    },
+    {
+      "id": "KESI-8", "plan": "AAR Business Medical Plan (SME), unshared", "profile": "Age band 18-30", "age": 24,
+      "points": [[500000, 16177], [1000000, 16801], [2000000, 18032], [3000000, 19529], [4000000, 21026], [5000000, 22523], [6000000, 24020], [7000000, 25517], [8000000, 27014], [9000000, 28511], [10000000, 30008]],
+      "quote_year": 2017, "quality": "insurer rate table",
+      "source": "AAR SME brochure, p.4", "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    },
+    {
+      "id": "KESI-9", "plan": "AAR Business Medical Plan (SME), unshared", "profile": "Age band 31-40", "age": 35,
+      "points": [[500000, 23145], [1000000, 24059], [2000000, 25863], [3000000, 28056], [4000000, 30250], [5000000, 32443], [6000000, 34637], [7000000, 36830], [8000000, 39024], [9000000, 41217], [10000000, 43411]],
+      "quote_year": 2017, "quality": "insurer rate table",
+      "source": "AAR SME brochure, p.4", "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    },
+    {
+      "id": "KESI-10", "plan": "AAR Business Medical Plan (SME), unshared", "profile": "Age band 41-50", "age": 45,
+      "points": [[500000, 33354], [1000000, 34693], [2000000, 37336], [3000000, 40550], [4000000, 43764], [5000000, 46978], [6000000, 50192], [7000000, 53406], [8000000, 56620], [9000000, 59833], [10000000, 63047]],
+      "quote_year": 2017, "quality": "insurer rate table",
+      "source": "AAR SME brochure, p.4", "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    },
+    {
+      "id": "KESI-11", "plan": "AAR Business Medical Plan (SME), unshared", "profile": "Age band 51-60", "age": 55,
+      "points": [[500000, 48312], [1000000, 50275], [2000000, 54147], [3000000, 58856], [4000000, 63565], [5000000, 68274], [6000000, 72983], [7000000, 77692], [8000000, 82401], [9000000, 87110], [10000000, 91819]],
+      "quote_year": 2017, "quality": "insurer rate table",
+      "source": "AAR SME brochure, p.4", "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    },
+    {
+      "id": "KESI-12", "plan": "AAR Business Medical Plan (SME), unshared", "profile": "Age band 61-64", "age": 62,
+      "points": [[500000, 70229], [1000000, 73105], [2000000, 78778], [3000000, 85678], [4000000, 92578], [5000000, 99478], [6000000, 106378], [7000000, 113277], [8000000, 120177], [9000000, 127077], [10000000, 133977]],
+      "quote_year": 2017, "quality": "insurer rate table",
+      "source": "AAR SME brochure, p.4", "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    },
+    {
+      "id": "KESI-13", "plan": "AAR Business Medical Plan (SME), family shared", "profile": "Family M+3", "age": 35,
+      "points": [[500000, 57633], [1000000, 59734], [2000000, 78778], [3000000, 87590], [4000000, 96403], [5000000, 105215], [6000000, 109149], [7000000, 113083], [8000000, 117018], [9000000, 120952], [10000000, 124887]],
+      "quote_year": 2017, "quality": "insurer rate table",
+      "source": "AAR SME brochure, p.4, family shared rates", "source_url": "https://cactus.co.ke/downloads/AAR_Business_Medical_Plan_SME_Brochure.pdf"
+    }
+  ],
+  "USA": {
+    "metal_tiers": {
+      "id": "USSI-1",
+      "profile": "Age 40, US average weighted by county plan selections, 2026",
+      "monthly_premium": {"bronze": 456, "silver_lowest": 611, "silver_benchmark": 625, "gold": 615},
+      "definition": "Lowest-cost bronze, lowest-cost silver, benchmark (second-lowest-cost) silver and lowest-cost gold premium for a 40-year-old in each county, weighted by county plan selections.",
+      "quote_year": 2026, "quality": "published national average",
+      "source": "KFF State Health Facts, Average Marketplace Premiums by Metal Tier, 2026 (United States row)",
+      "source_url": "https://www.kff.org/affordable-care-act/state-indicator/average-marketplace-premiums-by-metal-tier/"
+    },
+    "actuarial_value": {
+      "value": {"bronze": 0.60, "silver": 0.70, "gold": 0.80, "platinum": 0.90},
+      "source": "45 CFR 156.140(b): levels of coverage (actuarial value 60/70/80/90%, with a de minimis range)",
+      "source_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-156/subpart-B/section-156.140"
+    },
+    "standard_silver_deductible_usd": {
+      "value": 5304,
+      "year": 2026,
+      "source": "KFF, What We Know So Far About 2026 ACA Marketplace Enrollment, Premiums, and Deductibles (19 May 2026): '$5,304 for the standard silver plan'",
+      "source_url": "https://www.kff.org/affordable-care-act/what-we-know-so-far-about-2026-aca-marketplace-enrollment-premiums-and-deductibles/"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "description": "Age-specific prevalence of diabetes and hypertension, used by cost_of_delay to estimate the chance of developing a condition while waiting to buy cover. Prevalence is in % of adults; each band is placed at its midpoint age and interpolated linearly.",
+    "method": "P(develop c during delay | free at age a) = max(0, prev(a + k) - prev(a)) / (1 - prev(a)). Cross-sectional prevalence differences approximate incidence (ignores cohort effects and deaths); conditions are combined assuming independence.",
+    "collected": "2026-10-23"
+  },
+  "USA": {
+    "hypertension": {
+      "bands": [[18, 39, 23.4], [40, 59, 52.5], [60, 79, 71.6]],
+      "source": "NCHS Data Brief No. 511 (Oct 2024): hypertension prevalence, August 2021-August 2023",
+      "source_url": "https://www.cdc.gov/nchs/products/databriefs/db511.htm", "year": 2023, "quality": "national survey (NHANES)"
+    },
+    "diabetes": {
+      "bands": [[18, 44, 4.0], [45, 64, 17.0], [65, 79, 25.0]],
+      "source": "CDC National Diabetes Statistics Report 2017 release (2015 data): 4% of adults 18-44, 17% of 45-64, 25% of 65+ had diabetes",
+      "source_url": "https://archive.cdc.gov/www_cdc_gov/media/releases/2017/p0718-diabetes-report.html", "year": 2015,
+      "quality": "national estimate; older than the hypertension data (2023 overall prevalence is 12.0%)"
+    }
+  },
+  "KEN": {
+    "diabetes": {
+      "bands": [[18, 29, 0.6], [30, 44, 2.3], [45, 59, 7.1], [60, 69, 6.0]],
+      "source": "Mohamed SF et al., Prevalence and factors associated with pre-diabetes and diabetes mellitus in Kenya: results from a national survey (STEPS 2015), BMC Public Health 2018;18(Suppl 3):1215, Table 3",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6218998", "year": 2015, "quality": "national survey"
+    },
+    "hypertension": {
+      "bands": [[18, 29, 17.7], [60, 69, 58.3]],
+      "source": "Kenya STEPS 2015 survey: hypertension 17.7% at 18-29 and 58.3% at 60-69 (overall 28.6%), as reported in a 2020 secondary analysis of the survey; intermediate bands interpolated",
+      "source_url": "https://extranet.who.int/ncdsmicrodata/index.php/catalog/247", "year": 2015,
+      "quality": "secondary report of a national survey; only two bands published in the text read"
+    }
+  },
+  "IND": {
+    "national": {
+      "diabetes": 11.4, "hypertension": 35.5, "ages": "20+",
+      "source": "Anjana RM et al., Metabolic non-communicable disease health report of India: the ICMR-INDIAB national cross-sectional study (ICMR-INDIAB-17), Lancet Diabetes Endocrinol 2023;11:474-89",
+      "source_url": "https://doi.org/10.1016/S2213-8587(23)00119-5", "year": 2023, "quality": "national survey (113,043 adults)"
+    },
+    "age_shape": {
+      "source_type": "assumption",
+      "source": "The ICMR-INDIAB-17 main paper gives no age-band table, so India's bands are the US age pattern scaled to India's national prevalence (diabetes x 11.4/12.0, hypertension x 35.5/47.7; US overall: CDC 2023 12.0%, NCHS 2021-23 47.7%). Lower confidence than USA and Kenya.",
+      "scale": {"diabetes": 0.95, "hypertension": 0.7442}
+    }
+  },
+  "consequences": {
+    "IND": {
+      "health": "Any condition diagnosed before buying becomes a pre-existing disease: it is excluded for up to 36 months (IRDAI maximum), and insurers may add a premium loading, a co-pay, or decline.",
+      "health_source": "IRDAI Master Circular on Health Insurance Business, 29 May 2024 (36-month PED maximum)",
+      "health_source_url": "https://nyvo.in/health-insurance/irdai-master-circular-2024"
+    },
+    "USA": {
+      "health": "ACA plans cannot refuse cover or charge more for pre-existing conditions, but you can only enrol in open enrolment or after a qualifying life event.",
+      "health_source": "45 CFR 147.102 (premium may vary only by age, tobacco, area and family size)",
+      "health_source_url": "https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-B/part-147/section-147.102"
+    },
+    "KEN": {
+      "health": "Chronic and pre-existing conditions face a 1-year wait and a sub-limit (Old Mutual AfyaImara: KES 400,000 on the KES 1M option) or a 6-month wait (AAR); a medical report is required above age 45 (AAR) or 60 (Old Mutual).",
+      "health_source": "Old Mutual AfyaImara brochure (2022), benefit table; AAR SME brochure (2017), general conditions",
+      "health_source_url": "https://www.oldmutual.co.ke/om-docs/blt94368202535313ed/Afyaimara_Family_Cover_Brochure.pdf"
+    },
+    "term_life": "Term life is medically underwritten in all three countries: diabetes or hypertension can mean a premium loading, a postponement or a decline. The size of a loading varies by insurer and is not modelled."
+  }
+}

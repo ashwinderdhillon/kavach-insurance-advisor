@@ -1,0 +1,131 @@
+{
+  "IND": {
+    "chosen": "power",
+    "stats": {
+      "power": {
+        "coef": [
+          0.3735855768137242
+        ],
+        "in_sample_mape_pct": 11.274057000359184,
+        "loso_mape_pct": 12.506085940190967,
+        "monotone": true
+      },
+      "quad_log": {
+        "coef": [
+          0.4735247736661208,
+          -0.048060728075994597
+        ],
+        "in_sample_mape_pct": 11.345955727754593,
+        "loso_mape_pct": 12.66180692476277,
+        "monotone": true
+      },
+      "power_age": {
+        "coef": [
+          0.3630082806266346,
+          -0.016815510795160193
+        ],
+        "in_sample_mape_pct": 10.983806576320884,
+        "loso_mape_pct": 12.550064064361882,
+        "monotone": true
+      }
+    },
+    "per_series_power_slope": {
+      "INSI-1": 0.137,
+      "INSI-2": 0.123,
+      "INSI-3": 0.139,
+      "INSI-4": 0.338,
+      "INSI-5": 0.428,
+      "INSI-6": 0.43,
+      "INSI-7": 0.376,
+      "INSI-8": 0.338,
+      "INSI-9": 0.376,
+      "INSI-10": 0.395
+    },
+    "fitted_range": [
+      500000,
+      10000000
+    ],
+    "sensitivity_chart_series_only": {
+      "series": [
+        "INSI-1",
+        "INSI-2",
+        "INSI-3",
+        "INSI-4"
+      ],
+      "power_slope": 0.184,
+      "range": "15L-50L only"
+    }
+  },
+  "KEN": {
+    "chosen": "quad_log",
+    "stats": {
+      "power": {
+        "coef": [
+          0.23851658449000013
+        ],
+        "in_sample_mape_pct": 8.698420131934121,
+        "loso_mape_pct": 8.955821369738572,
+        "monotone": true
+      },
+      "quad_log": {
+        "coef": [
+          0.16506351542047515,
+          0.04360488312118527
+        ],
+        "in_sample_mape_pct": 7.823170467829378,
+        "loso_mape_pct": 8.238564944403985,
+        "monotone": true
+      },
+      "power_age": {
+        "coef": [
+          0.23728652118370253,
+          -0.008494476284829133
+        ],
+        "in_sample_mape_pct": 8.269394839752561,
+        "loso_mape_pct": 8.825912988779342,
+        "monotone": true
+      }
+    },
+    "per_series_power_slope": {
+      "KESI-1": 0.226,
+      "KESI-2": 0.236,
+      "KESI-3": 0.224,
+      "KESI-4": 0.182,
+      "KESI-5": 0.285,
+      "KESI-6": 0.289,
+      "KESI-7": 0.297,
+      "KESI-8": 0.211,
+      "KESI-9": 0.215,
+      "KESI-10": 0.218,
+      "KESI-11": 0.22,
+      "KESI-12": 0.221,
+      "KESI-13": 0.281
+    },
+    "fitted_range": [
+      500000,
+      10000000
+    ]
+  },
+  "USA": {
+    "value": {
+      "bronze": 0.7296,
+      "silver": 1.0,
+      "gold": 0.984,
+      "platinum": 1.107
+    },
+    "unit": "annual premium ratio vs benchmark silver",
+    "year": 2026,
+    "source": "KFF State Health Facts, Average Marketplace Premiums by Metal Tier, 2026 (United States row); platinum = gold x AV ratio 0.90/0.80 (45 CFR 156.140), derived",
+    "source_url": "https://www.kff.org/affordable-care-act/state-indicator/average-marketplace-premiums-by-metal-tier/",
+    "fetched": "2026-10-23",
+    "note": "Market prices, not actuarial value: silver plans are 'silver-loaded' with the cost of cost-sharing reductions, so lowest-cost gold ($615) costs about the same as benchmark silver ($625). Pure AV ratios would be bronze 0.857, silver 1.000, gold 1.143, platinum 1.286.",
+    "actuarial_value": {
+      "bronze": 0.6,
+      "silver": 0.7,
+      "gold": 0.8,
+      "platinum": 0.9
+    },
+    "standard_silver_deductible_usd": 5304,
+    "standard_silver_deductible_source_url": "https://www.kff.org/affordable-care-act/what-we-know-so-far-about-2026-aca-marketplace-enrollment-premiums-and-deductibles/"
+  }
+}

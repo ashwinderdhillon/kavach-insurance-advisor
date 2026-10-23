@@ -1,0 +1,268 @@
+{
+  "rows": [
+    {
+      "country": "USA",
+      "id": "US-1",
+      "profile": "Age 40, non-smoker, individual (benchmark silver)",
+      "type": "published",
+      "quote_year": 2026,
+      "quote": 7500.0,
+      "model_raw": 15753.0,
+      "dev_raw_%": 110.04,
+      "model_loo": 8458.0,
+      "dev_loo_%": 12.773333333333326,
+      "model_cal": 8125.0,
+      "dev_cal_%": 8.333333333333325
+    },
+    {
+      "country": "USA",
+      "id": "US-2",
+      "profile": "Age 30, non-smoker, individual",
+      "type": "derived",
+      "quote_year": 2026,
+      "quote": 6660.8,
+      "model_raw": 13990.0,
+      "dev_raw_%": 110.03483065097286,
+      "model_loo": NaN,
+      "dev_loo_%": NaN,
+      "model_cal": 7216.0,
+      "dev_cal_%": 8.33533509488349
+    },
+    {
+      "country": "USA",
+      "id": "US-3",
+      "profile": "Age 45, smoker, individual",
+      "type": "derived",
+      "quote_year": 2026,
+      "quote": 12711.5,
+      "model_raw": 26698.0,
+      "dev_raw_%": 110.03028753490933,
+      "model_loo": NaN,
+      "dev_loo_%": NaN,
+      "model_cal": 13771.0,
+      "dev_cal_%": 8.334972269205053
+    },
+    {
+      "country": "USA",
+      "id": "US-4",
+      "profile": "Family: two adults 35, children 5 and 8",
+      "type": "derived",
+      "quote_year": 2026,
+      "quote": 23321.6,
+      "model_raw": 48984.0,
+      "dev_raw_%": 110.03704720087816,
+      "model_loo": NaN,
+      "dev_loo_%": NaN,
+      "model_cal": 25266.0,
+      "dev_cal_%": 8.337335345773877
+    },
+    {
+      "country": "USA",
+      "id": "US-5",
+      "profile": "Employer plan, single coverage (average covered worker)",
+      "type": "published",
+      "quote_year": 2026,
+      "quote": 9804.0,
+      "model_raw": 20039.0,
+      "dev_raw_%": 104.39616483068134,
+      "model_loo": 10614.0,
+      "dev_loo_%": 8.261933904528762,
+      "model_cal": 10336.0,
+      "dev_cal_%": 5.4263565891472965
+    },
+    {
+      "country": "USA",
+      "id": "US-6",
+      "profile": "Employer plan, family of four",
+      "type": "published",
+      "quote_year": 2026,
+      "quote": 28303.0,
+      "model_raw": 48030.0,
+      "dev_raw_%": 69.69932515987705,
+      "model_loo": 23181.0,
+      "dev_loo_%": -18.097021517153657,
+      "model_cal": 24774.0,
+      "dev_cal_%": -12.468642900045934
+    },
+    {
+      "country": "IND",
+      "id": "IN-1",
+      "profile": "Age 30 male, non-smoker, individual, Rs 10 lakh, Tier-1 city",
+      "type": "published",
+      "quote_year": 2026,
+      "quote": 10350.0,
+      "model_raw": 5017.0,
+      "dev_raw_%": -51.52657004830918,
+      "model_loo": 10702.0,
+      "dev_loo_%": 3.400966183574883,
+      "model_cal": 10583.0,
+      "dev_cal_%": 2.2512077294686073
+    },
+    {
+      "country": "IND",
+      "id": "IN-2",
+      "profile": "Family floater 2A+1C (35, 34, child 5), Rs 15 lakh, Delhi",
+      "type": "published",
+      "quote_year": 2026,
+      "quote": 25521.5,
+      "model_raw": 13861.0,
+      "dev_raw_%": -45.68892894226436,
+      "model_loo": 31296.0,
+      "dev_loo_%": 22.626021197813607,
+      "model_cal": 29239.0,
+      "dev_cal_%": 14.566150108731858
+    },
+    {
+      "country": "IND",
+      "id": "IN-3",
+      "profile": "Senior couple (62, 63), Rs 15 lakh floater, Delhi",
+      "type": "published",
+      "quote_year": 2026,
+      "quote": 68239.0,
+      "model_raw": 27614.0,
+      "dev_raw_%": -59.53340465129911,
+      "model_loo": 53819.0,
+      "dev_loo_%": -21.13161095561189,
+      "model_cal": 58249.0,
+      "dev_cal_%": -14.639722153020996
+    },
+    {
+      "country": "KEN",
+      "id": "KE-1",
+      "profile": "Age 30 principal, inpatient KES 1M",
+      "type": "published",
+      "quote_year": 2022,
+      "quote": 35223.0,
+      "model_raw": 4934.0,
+      "dev_raw_%": -85.99210742980439,
+      "model_loo": 26018.0,
+      "dev_loo_%": -26.133492320358854,
+      "model_cal": 27365.0,
+      "dev_cal_%": -22.309286545722962
+    },
+    {
+      "country": "KEN",
+      "id": "KE-2",
+      "profile": "Age 45 principal, inpatient KES 1M",
+      "type": "published",
+      "quote_year": 2022,
+      "quote": 39385.0,
+      "model_raw": 9249.0,
+      "dev_raw_%": -76.516440269138,
+      "model_loo": 54082.0,
+      "dev_loo_%": 37.31623714612162,
+      "model_cal": 51298.0,
+      "dev_cal_%": 30.247556176209223
+    },
+    {
+      "country": "KEN",
+      "id": "KE-3",
+      "profile": "Family: principal 35, spouse 33, children 5 and 8, inpatient KES 1M",
+      "type": "published",
+      "quote_year": 2022,
+      "quote": 96212.0,
+      "model_raw": 17356.0,
+      "dev_raw_%": -81.96067018667111,
+      "model_loo": 96271.0,
+      "dev_loo_%": 0.061322911902883526,
+      "model_cal": 96261.0,
+      "dev_cal_%": 0.05092919802103246
+    },
+    {
+      "country": "KEN",
+      "id": "KE-4",
+      "profile": "AAR SME plan, age band 18-30 (priced at 25), inpatient KES 1M",
+      "type": "published",
+      "quote_year": 2026,
+      "quote": 38024.0,
+      "model_raw": 7043.0,
+      "dev_raw_%": -81.47748790237745,
+      "model_loo": 39272.0,
+      "dev_loo_%": 3.2821375973069555,
+      "model_cal": 39061.0,
+      "dev_cal_%": 2.727224910582793
+    },
+    {
+      "country": "KEN",
+      "id": "KE-5",
+      "profile": "AAR SME plan, age band 41-50 (priced at 45), inpatient KES 1M",
+      "type": "published",
+      "quote_year": 2026,
+      "quote": 78518.0,
+      "model_raw": 13297.0,
+      "dev_raw_%": -83.06502967472427,
+      "model_loo": 72830.0,
+      "dev_loo_%": -7.244198782444789,
+      "model_cal": 73749.0,
+      "dev_cal_%": -6.073766524873281
+    },
+    {
+      "country": "KEN",
+      "id": "KE-6",
+      "profile": "AAR SME plan, family shared M+3 (35, 33, children 5 and 8), inpatient KES 1M",
+      "type": "published",
+      "quote_year": 2026,
+      "quote": 135191.0,
+      "model_raw": 24952.0,
+      "dev_raw_%": -81.54315006176446,
+      "model_loo": 139041.0,
+      "dev_loo_%": 2.847822710091652,
+      "model_cal": 138391.0,
+      "dev_cal_%": 2.367021473322928
+    }
+  ],
+  "summary": [
+    {
+      "country": "IND",
+      "MAPE_raw_%": 52.24963454729089,
+      "MAPE_leave_one_out_%": 15.719532779000128,
+      "MAPE_calibrated_in_sample_%": 10.485693330407154
+    },
+    {
+      "country": "KEN",
+      "MAPE_raw_%": 81.75914758741328,
+      "MAPE_leave_one_out_%": 12.814201911371127,
+      "MAPE_calibrated_in_sample_%": 10.62929747145537
+    },
+    {
+      "country": "USA",
+      "MAPE_raw_%": 94.71182999685281,
+      "MAPE_leave_one_out_%": 13.044096251671915,
+      "MAPE_calibrated_in_sample_%": 8.74277760750885
+    }
+  ],
+  "calibration_factors": {
+    "USA": 0.5158356870474593,
+    "IND": 2.1094279637578444,
+    "KEN": 5.546319372016204
+  },
+  "quote_adjustments": [
+    "KE-4: 16,801 (2017) x (1 + 9.5%)^9 = 38,024 (2026)",
+    "KE-5: 34,693 (2017) x (1 + 9.5%)^9 = 78,518 (2026)",
+    "KE-6: 59,734 (2017) x (1 + 9.5%)^9 = 135,191 (2026)"
+  ],
+  "kenya_loss_ratio_sensitivity": [
+    {
+      "case": "low",
+      "loss_ratio": 0.746,
+      "calibration_factor": 5.546,
+      "probe_expected_claims": 29349.0,
+      "probe_premium": 39341.0
+    },
+    {
+      "case": "mid",
+      "loss_ratio": 0.81,
+      "calibration_factor": 6.022,
+      "probe_expected_claims": 31867.0,
+      "probe_premium": 39342.0
+    },
+    {
+      "case": "high",
+      "loss_ratio": 1.018,
+      "calibration_factor": 7.569,
+      "probe_expected_claims": 40050.0,
+      "probe_premium": 39342.0
+    }
+  ],
+  "threshold_pct": 40.0
+}

@@ -1,0 +1,268 @@
+{
+  "_meta": {
+    "description": "Function-calling declarations for the tools in src/tools.py. Each entry is {name, description, parameters} where parameters is a JSON-Schema object using only the subset both providers accept (type, description, enum, items, properties, required).",
+    "gemini": "Pass the list as tools=[{'function_declarations': tools}] (google-genai).",
+    "claude": "Map each entry to {'name', 'description', 'input_schema': parameters}.",
+    "dispatch": "Execute calls with src.tools.call_tool(name, args); it returns a JSON-serialisable dict or {'error': ...}.",
+    "money": "All money values are annual and in the country's local currency (USD, INR, KES) unless the name says monthly."
+  },
+  "tools": [
+    {
+      "name": "predict_health_premium",
+      "description": "Estimate the annual health insurance premium for a person (or family floater) in USA, India or Kenya. India/Kenya: premium scales with sum_insured. USA: ACA pricing by age and tobacco, cover level set by metal_tier. Returns premium, expected claims, assumptions and sources.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "age": {"type": "integer", "description": "Age of the main insured person in years."},
+          "sex": {"type": "string", "enum": ["male", "female"], "description": "Sex of the main insured person."},
+          "bmi": {"type": "number", "description": "Body mass index. Use 25 if unknown."},
+          "children": {"type": "integer", "description": "Number of children the person has (model feature)."},
+          "smoker": {"type": "boolean", "description": "True if the person currently smokes or uses tobacco."},
+          "country": {"type": "string", "enum": ["USA", "IND", "KEN"], "description": "Country code."},
+          "sum_insured": {"type": "number", "description": "India/Kenya only: cover amount in local currency, e.g. 1000000 for Rs 10 lakh or KES 1M. Omit to price the reference cover (10 lakh / KES 1M)."},
+          "metal_tier": {"type": "string", "enum": ["bronze", "silver", "gold", "platinum"], "description": "USA only: plan metal tier. Default silver."},
+          "family_members": {
+            "type": "array",
+            "description": "Optional other members for a family floater (spouse, children, parents).",
+            "items": {
+              "type": "object",
+              "properties": {
+                "age": {"type": "integer"},
+                "sex": {"type": "string", "enum": ["male", "female"]},
+                "bmi": {"type": "number"},
+                "smoker": {"type": "boolean"}
+              },
+              "required": ["age"]
+            }
+          }
+        },
+        "required": ["age", "sex", "bmi", "children", "smoker", "country"]
+      }
+    },
+    {
+      "name": "predict_term_premium",
+      "description": "Estimate the level annual premium for pure term life cover from WHO life tables calibrated to market quotes. Returns premium, probability of death during the term, assumptions and sources.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "age": {"type": "integer", "description": "Age at purchase (18-75)."},
+          "sex": {"type": "string", "enum": ["male", "female"]},
+          "smoker": {"type": "boolean", "description": "Current smoker or tobacco user."},
+          "cover": {"type": "number", "description": "Sum assured in local currency."},
+          "term_years": {"type": "integer", "description": "Policy term in years; cover must end by age 100."},
+          "country": {"type": "string", "enum": ["USA", "IND", "KEN"]}
+        },
+        "required": ["age", "sex", "smoker", "cover", "term_years", "country"]
+      }
+    },
+    {
+      "name": "project_cover_decay",
+      "description": "Show how a fixed health cover loses real value as medical prices rise: yearly series of real value and the cover needed to keep pace. Use for the cover-decay chart.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "cover": {"type": "number", "description": "Current health sum insured (or annual limit) in local currency."},
+          "country": {"type": "string", "enum": ["USA", "IND", "KEN"]},
+          "years": {"type": "integer", "description": "Projection horizon in years, e.g. 5, 10 or 20. Default 10."}
+        },
+        "required": ["cover", "country"]
+      }
+    },
+    {
+      "name": "calc_term_cover_needed",
+      "description": "Needs-based life cover: family expenses replaced for the years needed (inflation-adjusted), plus debts and goals, minus liquid assets and existing cover.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "annual_expenses": {"type": "number", "description": "Family's annual expenses WITHOUT the earner, local currency."},
+          "years_needed": {"type": "number", "description": "Years the family needs support, e.g. until the youngest child is independent."},
+          "debts": {"type": "number", "description": "Outstanding loans to be cleared. Default 0."},
+          "goals": {"type": "number", "description": "Future goals to fund now, e.g. children's education. Default 0."},
+          "liquid_assets": {"type": "number", "description": "Savings and investments available to the family. Default 0."},
+          "existing_cover": {"type": "number", "description": "Life cover already held. Default 0."},
+          "country": {"type": "string", "enum": ["USA", "IND", "KEN"]}
+        },
+        "required": ["annual_expenses", "years_needed", "country"]
+      }
+    },
+    {
+      "name": "cost_of_delay",
+      "description": "What waiting to buy costs: term life premium now vs after the delay (same cover end age), extra paid over the term, premiums skipped, risk of dying uninsured, net cost; the delayed health entry premium and waiting periods; and risk_of_waiting: the chance of developing diabetes or hypertension during the delay and what that does to insurability. Always relay the verdict and risk_of_waiting; never present waiting as the better choice.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "age": {"type": "integer", "description": "Current age."},
+          "delay_years": {"type": "integer", "description": "Years the user is thinking of waiting (>= 1)."},
+          "country": {"type": "string", "enum": ["USA", "IND", "KEN"]},
+          "profile": {
+            "type": "object",
+            "description": "Policy details. Missing values use defaults (male, non-smoker, typical cover).",
+            "properties": {
+              "sex": {"type": "string", "enum": ["male", "female"]},
+              "smoker": {"type": "boolean"},
+              "cover": {"type": "number", "description": "Term life sum assured."},
+              "term_years": {"type": "integer", "description": "Term if bought now; must exceed delay_years."},
+              "bmi": {"type": "number"},
+              "children": {"type": "integer"},
+              "sum_insured": {"type": "number", "description": "Health sum insured (India/Kenya)."},
+              "metal_tier": {"type": "string", "enum": ["bronze", "silver", "gold", "platinum"]},
+              "include_health": {"type": "boolean", "description": "Include the health part. Default true."}
+            }
+          }
+        },
+        "required": ["age", "delay_years", "country"]
+      }
+    },
+    {
+      "name": "check_govt_schemes",
+      "description": "Check eligibility for government schemes BEFORE recommending paid products: PM-JAY, PMJJBY, PMSBY (India); Medicare, Medicaid expansion, ACA premium tax credit (USA); SHA (Kenya, with estimated contribution). Each result is eligible / check / not_eligible with the rule and source.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "country": {"type": "string", "enum": ["USA", "IND", "KEN"]},
+          "age": {"type": "integer"},
+          "annual_income": {"type": "number", "description": "Household annual income, local currency."},
+          "employment_type": {"type": "string", "enum": ["salaried", "self_employed", "informal", "daily_wage", "farmer", "unemployed", "retired", "student"]},
+          "rural": {"type": "boolean", "description": "Lives in a rural area."},
+          "household_size": {"type": "integer", "description": "People in the household (USA poverty line). Default 1."},
+          "state": {"type": "string", "description": "USA only: two-letter state code, e.g. TX."},
+          "has_bank_account": {"type": "boolean", "description": "India: has a savings bank or post office account."},
+          "disabled": {"type": "boolean", "description": "USA: receives disability benefits (Medicare under 65). Default false."},
+          "has_affordable_employer_coverage": {"type": "boolean", "description": "USA: offered affordable employer health cover."}
+        },
+        "required": ["country", "age", "annual_income", "employment_type", "rural"]
+      }
+    },
+    {
+      "name": "recommend_cover_types",
+      "description": "Prioritised list of insurance types the household needs (health, term life, income protection, motor, home, livelihood, micro, travel, retirement) with a one-line reason each; investment-linked plans go in 'avoid'. Returns need_more_info and the missing fields if the profile is too incomplete.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "profile": {
+            "type": "object",
+            "properties": {
+              "country": {"type": "string", "enum": ["USA", "IND", "KEN"]},
+              "age": {"type": "integer"},
+              "dependants": {"type": "integer", "description": "People who rely on the user's income."},
+              "annual_income": {"type": "number"},
+              "employment_type": {"type": "string", "enum": ["salaried", "self_employed", "informal", "daily_wage", "farmer", "unemployed", "retired", "student"]},
+              "has_health_cover": {"type": "boolean"},
+              "health_cover_source": {"type": "string", "enum": ["employer", "government", "private"]},
+              "has_life_cover": {"type": "boolean"},
+              "debts": {"type": "number", "description": "Outstanding loans, 0 if none."},
+              "owns_vehicle": {"type": "boolean"},
+              "owns_home": {"type": "boolean"},
+              "rents": {"type": "boolean"},
+              "owns_livestock": {"type": "boolean"},
+              "occupation_risk": {"type": "string", "enum": ["low", "medium", "high"]},
+              "parents_dependent": {"type": "boolean"},
+              "parents_age": {"type": "integer"},
+              "travels_abroad": {"type": "boolean"},
+              "rural": {"type": "boolean"},
+              "household_size": {"type": "integer"},
+              "state": {"type": "string"},
+              "has_bank_account": {"type": "boolean"}
+            },
+            "required": ["country"]
+          }
+        },
+        "required": ["profile"]
+      }
+    },
+    {
+      "name": "protection_score",
+      "description": "0-100 protection score today and in 10 years with a breakdown: health adequacy, life adequacy, affordability (premium-to-income vs country threshold) and red flags. Weights are set per country.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "profile": {
+            "type": "object",
+            "properties": {
+              "country": {"type": "string", "enum": ["USA", "IND", "KEN"]},
+              "age": {"type": "integer"},
+              "annual_income": {"type": "number"},
+              "annual_expenses": {"type": "number", "description": "Family expenses without the earner."},
+              "dependants": {"type": "integer"},
+              "years_support_needed": {"type": "number"},
+              "debts": {"type": "number"},
+              "goals": {"type": "number"},
+              "liquid_assets": {"type": "number", "description": "Savings / emergency fund."},
+              "family_size": {"type": "integer", "description": "People covered by the health policy."}
+            },
+            "required": ["country", "annual_income"]
+          },
+          "current_covers": {
+            "type": "object",
+            "properties": {
+              "health_sum_insured": {"type": "number", "description": "India/Kenya private health cover amount."},
+              "govt_health_cover": {"type": "number", "description": "Government cover amount, e.g. 500000 for PM-JAY."},
+              "has_health_plan": {"type": "boolean", "description": "USA: holds an ACA-compliant or employer plan."},
+              "oop_max": {"type": "number", "description": "USA: plan out-of-pocket maximum."},
+              "life_cover": {"type": "number"},
+              "annual_premiums": {"type": "number", "description": "All insurance premiums per year."},
+              "health_premium": {"type": "number", "description": "Health share of annual_premiums."},
+              "policy_features": {"type": "object", "description": "Same keys as check_red_flags.policy_features."}
+            }
+          }
+        },
+        "required": ["profile", "current_covers"]
+      }
+    },
+    {
+      "name": "check_red_flags",
+      "description": "Flag policy terms that commonly shrink or reject claims: room-rent cap, heavy co-pay, long waiting periods, disease sub-limits, investment-linked plan, deductible above savings, non-ACA-compliant US plan.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "policy_features": {
+            "type": "object",
+            "properties": {
+              "room_rent_cap": {"type": "string", "description": "Cap text, e.g. '1% of sum insured per day'; omit or 'none' if no cap."},
+              "copay_pct": {"type": "number"},
+              "initial_wait_days": {"type": "integer"},
+              "ped_wait_months": {"type": "integer", "description": "Pre-existing disease waiting period."},
+              "specific_illness_wait_months": {"type": "integer"},
+              "disease_sublimits": {"type": "boolean"},
+              "plan_type": {"type": "string", "description": "e.g. term, indemnity, endowment, money_back, ulip, whole_life, return_of_premium, short_term."},
+              "restoration": {"type": "boolean"},
+              "deductible": {"type": "number"},
+              "emergency_fund": {"type": "number"},
+              "oop_max": {"type": "number", "description": "USA plan out-of-pocket maximum."},
+              "policy_type": {"type": "string", "enum": ["individual", "family"]}
+            }
+          },
+          "country": {"type": "string", "enum": ["USA", "IND", "KEN"]}
+        },
+        "required": ["policy_features", "country"]
+      }
+    },
+    {
+      "name": "accident_cover_needed",
+      "description": "Income-protection target: personal accident cover as a multiple of income (India, Kenya) or long-term disability monthly benefit (USA), with urgency set by occupation risk.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "annual_income": {"type": "number"},
+          "occupation_risk": {"type": "string", "enum": ["low", "medium", "high"], "description": "low = desk job, medium = some travel/field work, high = driving, construction, manual or field work."},
+          "country": {"type": "string", "enum": ["USA", "IND", "KEN"]}
+        },
+        "required": ["annual_income", "occupation_risk", "country"]
+      }
+    },
+    {
+      "name": "motor_check",
+      "description": "Motor insurance check: whether third-party cover is mandatory, insured value after depreciation (India), zero-depreciation advice, and comprehensive vs third-party-only by vehicle age.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "vehicle_type": {"type": "string", "enum": ["car", "two_wheeler", "motorcycle", "commercial"]},
+          "vehicle_age": {"type": "number", "description": "Vehicle age in years."},
+          "country": {"type": "string", "enum": ["USA", "IND", "KEN"]},
+          "vehicle_value": {"type": "number", "description": "Optional: ex-showroom / purchase price, local currency."}
+        },
+        "required": ["vehicle_type", "vehicle_age", "country"]
+      }
+    }
+  ]
+}

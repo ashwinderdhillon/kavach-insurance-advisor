@@ -1,0 +1,202 @@
+{
+  "rows": [
+    {
+      "country": "USA",
+      "id": "UST-1",
+      "profile": "Male 30, non-smoker, $500k, 20-year term",
+      "quote": 456,
+      "model_raw": 1655.0,
+      "dev_raw_%": 262.93859649122805,
+      "model_loo": 501.0,
+      "dev_loo_%": 9.868421052631572,
+      "model_cal": 486.0,
+      "dev_cal_%": 6.578947368421062
+    },
+    {
+      "country": "USA",
+      "id": "UST-2",
+      "profile": "Male 45, non-smoker, $500k, 20-year term",
+      "quote": 1080,
+      "model_raw": 3958.0,
+      "dev_raw_%": 266.4814814814815,
+      "model_loo": 1125.0,
+      "dev_loo_%": 4.166666666666674,
+      "model_cal": 1109.0,
+      "dev_cal_%": 2.6851851851851904
+    },
+    {
+      "country": "USA",
+      "id": "UST-3",
+      "profile": "Male 40, smoker, $500k, 20-year term",
+      "quote": 2328,
+      "model_raw": 7673.0,
+      "dev_raw_%": 229.59621993127146,
+      "model_loo": 2021.0,
+      "dev_loo_%": -13.187285223367695,
+      "model_cal": 2123.0,
+      "dev_cal_%": -8.805841924398628
+    },
+    {
+      "country": "IND",
+      "id": "INT-1",
+      "profile": "Male 30, non-smoker, Rs 1 crore, cover to age 60",
+      "quote": 9528,
+      "model_raw": 56222.0,
+      "dev_raw_%": 490.071368597817,
+      "model_loo": 10832.0,
+      "dev_loo_%": 13.685978169605374,
+      "model_cal": 10382.0,
+      "dev_cal_%": 8.963056255247693
+    },
+    {
+      "country": "IND",
+      "id": "INT-2",
+      "profile": "Male 45, non-smoker, Rs 1 crore, cover to age 60",
+      "quote": 22008,
+      "model_raw": 104912.0,
+      "dev_raw_%": 376.6993820428935,
+      "model_loo": 17268.0,
+      "dev_loo_%": -21.53762268266085,
+      "model_cal": 18760.0,
+      "dev_cal_%": -14.75826972010178
+    },
+    {
+      "country": "IND",
+      "id": "INT-3",
+      "profile": "Female 30, non-smoker, Rs 1 crore, cover to age 60",
+      "quote": 8100,
+      "model_raw": 46934.0,
+      "dev_raw_%": 479.4320987654321,
+      "model_loo": 9042.0,
+      "dev_loo_%": 11.629629629629633,
+      "model_cal": 8722.0,
+      "dev_cal_%": 7.679012345679004
+    },
+    {
+      "country": "KEN",
+      "id": "KET-1",
+      "profile": "Age 25-30 (priced as male 28), non-smoker, KES 5M, 20-year term",
+      "quote": 11000,
+      "model_raw": 24981.0,
+      "dev_raw_%": 127.1,
+      "model_loo": 11078.0,
+      "dev_loo_%": 0.7090909090909037,
+      "model_cal": 11052.0,
+      "dev_cal_%": 0.4727272727272691
+    },
+    {
+      "country": "KEN",
+      "id": "KET-2",
+      "profile": "Age 35 (priced as male), non-smoker, KES 5M, 20-year term",
+      "quote": 18000,
+      "model_raw": 41599.0,
+      "dev_raw_%": 131.10555555555555,
+      "model_loo": 18361.0,
+      "dev_loo_%": 2.0055555555555493,
+      "model_cal": 18239.0,
+      "dev_cal_%": 1.3277777777777722
+    },
+    {
+      "country": "KEN",
+      "id": "KET-3",
+      "profile": "Age 45-50 (priced as male 48), non-smoker, KES 5M, 20-year term",
+      "quote": 42500,
+      "model_raw": 95560.0,
+      "dev_raw_%": 124.8470588235294,
+      "model_loo": 41363.0,
+      "dev_loo_%": -2.6752941176470535,
+      "model_cal": 41743.0,
+      "dev_cal_%": -1.7811764705882305
+    }
+  ],
+  "summary": [
+    {
+      "country": "IND",
+      "MAPE_raw_%": 448.73428313538085,
+      "MAPE_leave_one_out_%": 15.617743493965285,
+      "MAPE_calibrated_in_sample_%": 10.466779440342826
+    },
+    {
+      "country": "KEN",
+      "MAPE_raw_%": 127.68420479302831,
+      "MAPE_leave_one_out_%": 1.7966468607645023,
+      "MAPE_calibrated_in_sample_%": 1.193893840364424
+    },
+    {
+      "country": "USA",
+      "MAPE_raw_%": 253.00543263466034,
+      "MAPE_leave_one_out_%": 9.074124314221981,
+      "MAPE_calibrated_in_sample_%": 6.023324826001627
+    }
+  ],
+  "insured_mortality_factors": {
+    "USA": 0.26670175579809224,
+    "IND": 0.17259285212245806,
+    "KEN": 0.42671269282420354
+  },
+  "loss_ratio_sensitivity": [
+    {
+      "country": "USA",
+      "case": "low",
+      "loss_ratio": 0.55,
+      "insured_mortality_factor": 0.226,
+      "premium_UST-1": 486.0
+    },
+    {
+      "country": "USA",
+      "case": "base",
+      "loss_ratio": 0.65,
+      "insured_mortality_factor": 0.267,
+      "premium_UST-1": 487.0
+    },
+    {
+      "country": "USA",
+      "case": "high",
+      "loss_ratio": 0.75,
+      "insured_mortality_factor": 0.308,
+      "premium_UST-1": 486.0
+    },
+    {
+      "country": "IND",
+      "case": "low",
+      "loss_ratio": 0.55,
+      "insured_mortality_factor": 0.146,
+      "premium_INT-1": 10383.0
+    },
+    {
+      "country": "IND",
+      "case": "base",
+      "loss_ratio": 0.65,
+      "insured_mortality_factor": 0.173,
+      "premium_INT-1": 10381.0
+    },
+    {
+      "country": "IND",
+      "case": "high",
+      "loss_ratio": 0.75,
+      "insured_mortality_factor": 0.199,
+      "premium_INT-1": 10380.0
+    },
+    {
+      "country": "KEN",
+      "case": "low",
+      "loss_ratio": 0.55,
+      "insured_mortality_factor": 0.361,
+      "premium_KET-1": 11046.0
+    },
+    {
+      "country": "KEN",
+      "case": "base",
+      "loss_ratio": 0.65,
+      "insured_mortality_factor": 0.427,
+      "premium_KET-1": 11052.0
+    },
+    {
+      "country": "KEN",
+      "case": "high",
+      "loss_ratio": 0.75,
+      "insured_mortality_factor": 0.493,
+      "premium_KET-1": 11058.0
+    }
+  ]
+}

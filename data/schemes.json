@@ -1,0 +1,163 @@
+{
+  "_meta": {
+    "description": "Government scheme eligibility rules for check_govt_schemes (src/tools.py). Each scheme has one or more eligibility paths; a path is a list of rules that must all pass. Rule strength 'hard' is a fact the user states (unknown -> check); 'proxy' is a signal that cannot be confirmed from a chat profile (e.g. SECC listing), so passing it yields 'check', never 'eligible'. Every rule cites its source.",
+    "rule_types": {
+      "age_between": "min <= age <= max",
+      "age_at_least": "age >= min",
+      "age_below": "age < max",
+      "income_pct_fpl_between": "min_pct <= household income / FPL(household_size) x 100 <= max_pct, using fpl_year",
+      "income_pct_fpl_at_most": "household income / FPL x 100 <= max_pct",
+      "employment_in": "employment_type is one of values",
+      "monthly_income_at_most": "annual_income / 12 <= max (proxy for a per-earner ceiling)",
+      "state_not_in": "US state is not in values (unknown state -> check)",
+      "flag_true": "profile flag is true (unknown -> check)",
+      "flag_not_true": "profile flag is not true (unknown -> check)",
+      "always": "no condition"
+    },
+    "verified": "2026-10-23",
+    "caution": "Scheme rules change. The tool reports the rule and source so the user can confirm on the official portal."
+  },
+  "USA": {
+    "poverty_guidelines": {
+      "2026": {"one_person": 15960, "per_additional_person": 5680,
+               "source": "HHS/ASPE 2026 Poverty Guidelines, 48 contiguous states and DC (in effect 13 Jan 2026)",
+               "source_url": "https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines"},
+      "2025": {"one_person": 15650, "per_additional_person": 5500,
+               "source": "HHS/ASPE 2025 Poverty Guidelines (used for 2026 Marketplace premium tax credits: 400% x 15,650 = $62,600 for one person)",
+               "source_url": "https://aspe.hhs.gov/topics/poverty-economic-mobility/poverty-guidelines"}
+    },
+    "schemes": [
+      {
+        "id": "medicare", "name": "Medicare", "type": "health (federal, age 65+)",
+        "benefit": "Hospital (Part A) and medical (Part B) cover; drug cover via Part D",
+        "how_to_apply": "Social Security / Medicare.gov; enrolment window around the 65th birthday",
+        "paths": [
+          {"label": "Age 65 or older", "rules": [
+            {"type": "age_at_least", "min": 65, "strength": "hard",
+             "source": "Medicare.gov: people 65 or older are eligible",
+             "source_url": "https://www.medicare.gov/basics/get-started-with-medicare"}]},
+          {"label": "Under 65 with a qualifying disability (SSDI 24 months, ESRD, ALS)", "rules": [
+            {"type": "flag_true", "flag": "disabled", "strength": "proxy",
+             "source": "Medicare.gov: some people under 65 qualify through disability",
+             "source_url": "https://www.medicare.gov/basics/get-started-with-medicare"}]}
+        ]
+      },
+      {
+        "id": "medicaid_expansion", "name": "Medicaid (ACA adult expansion)", "type": "health (state-federal, low income)",
+        "benefit": "Comprehensive cover with little or no premium",
+        "how_to_apply": "State Medicaid agency or HealthCare.gov",
+        "paths": [
+          {"label": "Adult under 65, income up to 138% FPL, in an expansion state", "rules": [
+            {"type": "age_below", "max": 65, "strength": "hard",
+             "source": "ACA Medicaid expansion covers non-elderly adults",
+             "source_url": "https://www.healthcare.gov/medicaid-chip/getting-medicaid-chip/"},
+            {"type": "income_pct_fpl_at_most", "max_pct": 138, "fpl_year": "2026", "strength": "hard",
+             "source": "ACA expansion threshold: 133% FPL plus a 5% income disregard = 138% FPL",
+             "source_url": "https://www.healthcare.gov/medicaid-chip/getting-medicaid-chip/"},
+            {"type": "state_not_in", "strength": "hard",
+             "values": ["AL", "FL", "GA", "KS", "MS", "SC", "TN", "TX", "WI", "WY"],
+             "source": "KFF, Status of State Action on the Medicaid Expansion Decision (as of October 2026): 41 adopted incl. DC, 10 not adopted",
+             "source_url": "https://www.kff.org/affordable-care-act/state-indicator/state-activity-around-expanding-medicaid-under-the-affordable-care-act/"}
+          ]}
+        ],
+        "notes": ["In the 10 non-expansion states most childless adults under 100% FPL get neither Medicaid nor Marketplace subsidies (the 'coverage gap'). Children may still qualify for Medicaid/CHIP at higher incomes."]
+      },
+      {
+        "id": "aca_premium_tax_credit", "name": "ACA Marketplace premium tax credit", "type": "health subsidy",
+        "benefit": "Tax credit that caps the benchmark silver premium at a share of income",
+        "how_to_apply": "HealthCare.gov or the state marketplace during open enrolment",
+        "paths": [
+          {"label": "Income 100-400% FPL, no Medicare/Medicaid, no affordable employer plan", "rules": [
+            {"type": "income_pct_fpl_between", "min_pct": 100, "max_pct": 400, "fpl_year": "2025", "strength": "hard",
+             "source": "KFF (19 May 2026): enhanced tax credits expired after 2025, so eligibility returned to 100-400% FPL ($62,600 for one person in 2026)",
+             "source_url": "https://www.kff.org/affordable-care-act/what-we-know-so-far-about-2026-aca-marketplace-enrollment-premiums-and-deductibles/"},
+            {"type": "age_below", "max": 65, "strength": "hard",
+             "source": "People eligible for Medicare cannot get Marketplace tax credits",
+             "source_url": "https://www.healthcare.gov/medicare/medicare-and-the-marketplace/"},
+            {"type": "flag_not_true", "flag": "has_affordable_employer_coverage", "strength": "hard",
+             "source": "An offer of affordable employer coverage (employee self-only share <= 9.96% of income in 2026, IRS Rev. Proc. 2025-25) removes eligibility",
+             "source_url": "https://www.irs.gov/pub/irs-drop/rp-25-25.pdf"}
+          ]}
+        ]
+      }
+    ]
+  },
+  "IND": {
+    "schemes": [
+      {
+        "id": "pmjay", "name": "Ayushman Bharat PM-JAY", "type": "health (government, free)",
+        "benefit": "Rs 5 lakh hospital cover per family per year at empanelled hospitals; cashless",
+        "benefit_amount": 500000,
+        "how_to_apply": "Check eligibility at beneficiary.nha.gov.in (Aadhaar / ration card) or an Ayushman Mitra at an empanelled hospital",
+        "paths": [
+          {"label": "Senior citizen 70+ (Ayushman Vay Vandana), any income", "rules": [
+            {"type": "age_at_least", "min": 70, "strength": "hard",
+             "source": "Cabinet decision, 11 Sep 2024: all senior citizens aged 70 and above eligible irrespective of income; Rs 5 lakh per year (separate top-up if the family is already covered)",
+             "source_url": "https://pmindia.gov.in/en/news_updates/cabinet-approves-health-coverage-to-all-senior-citizens-of-the-age-70-years-and-above-irrespective-of-income-under-ayushman-bharat-pradhan-mantri-jan-arogya-yojana-ab-pm-jay/"}]},
+          {"label": "Household listed under SECC 2011 deprivation / occupational criteria (or a state-expanded list)", "rules": [
+            {"type": "employment_in", "values": ["informal", "farmer", "unemployed", "daily_wage"], "strength": "proxy",
+             "source": "PM-JAY eligibility follows SECC 2011 deprivation (rural) and occupational (urban) criteria, e.g. landless manual casual labour, street vendors, domestic workers",
+             "source_url": "https://www.goa.gov.in/wp-content/uploads/2022/05/Ayushman-Bharat-%E2%80%93-Pradhan-Mantri-Jan-Arogya-Yojana-.pdf"},
+            {"type": "monthly_income_at_most", "max": 10000, "strength": "proxy",
+             "source": "SECC automatic exclusion: a household member earning more than Rs 10,000 a month (secondary sources; per-member vs household wording differs)",
+             "source_url": "https://www.morungexpress.com/ayushman-bharat-pradhan-mantri-jan-arogya-yojana-ab-pmjay"}
+          ]}
+        ],
+        "notes": ["Many states run their own schemes merged with PM-JAY with wider income limits; the portal check is final."]
+      },
+      {
+        "id": "pmjjby", "name": "PMJJBY (Pradhan Mantri Jeevan Jyoti Bima Yojana)", "type": "life (government-backed term)",
+        "benefit": "Rs 2 lakh life cover, death from any cause; premium Rs 436 a year auto-debited",
+        "benefit_amount": 200000, "annual_premium": 436,
+        "how_to_apply": "Through your bank or post office savings account (enrol/renew by 31 May each year)",
+        "paths": [
+          {"label": "Age 18-50 with a savings bank or post office account", "rules": [
+            {"type": "age_between", "min": 18, "max": 50, "strength": "hard",
+             "source": "PIB, PMJJBY 10 years (8 May 2025): ages 18-50 to enrol, cover continues to 55; Rs 2 lakh for Rs 436 a year",
+             "source_url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551501.pdf"},
+            {"type": "flag_true", "flag": "has_bank_account", "strength": "hard",
+             "source": "PIB (8 May 2025): requires a savings account; premium auto-debited",
+             "source_url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/may/doc202558551501.pdf"}
+          ]}
+        ]
+      },
+      {
+        "id": "pmsby", "name": "PMSBY (Pradhan Mantri Suraksha Bima Yojana)", "type": "accident (government-backed)",
+        "benefit": "Rs 2 lakh for accidental death or total disability, Rs 1 lakh for partial disability; premium Rs 20 a year",
+        "benefit_amount": 200000, "annual_premium": 20,
+        "how_to_apply": "Through your bank or post office savings account",
+        "paths": [
+          {"label": "Age 18-70 with a savings bank account", "rules": [
+            {"type": "age_between", "min": 18, "max": 70, "strength": "hard",
+             "source": "Department of Financial Services monthly summary (May 2022): PMSBY premium revised from Rs 12 to Rs 20 w.e.f. 1 Jun 2022; age 18-70 per scheme rules",
+             "source_url": "https://www.financialservices.gov.in/beta/sites/default/files/Website%20MDO%20English%2C%20May%202022%20.pdf"},
+            {"type": "flag_true", "flag": "has_bank_account", "strength": "hard",
+             "source": "Scheme requires an Aadhaar-linked savings account",
+             "source_url": "https://www.financialservices.gov.in/beta/sites/default/files/Website%20MDO%20English%2C%20May%202022%20.pdf"}
+          ]}
+        ]
+      }
+    ]
+  },
+  "KEN": {
+    "schemes": [
+      {
+        "id": "sha", "name": "Social Health Authority (SHA) - SHIF, Primary Health Care Fund, ECCIF", "type": "health (mandatory national scheme)",
+        "benefit": "Primary care free at public facilities; hospital, chronic and emergency cover via SHIF",
+        "contribution": {"rate_of_gross_income": 0.0275, "minimum_monthly_kes": 300},
+        "how_to_apply": "Register at sha.go.ke, *147# or a Huduma centre; informal earners are means-tested",
+        "paths": [
+          {"label": "Every Kenyan resident must register", "rules": [
+            {"type": "always", "strength": "hard",
+             "source": "Social Health Insurance Act 2023 (No. 16 of 2023): registration is mandatory for every resident",
+             "source_url": "https://new.kenyalaw.org/akn/ke/act/2023/16"}]}
+        ],
+        "contribution_source": {
+          "source": "Social Health Insurance Regulations 2024: 2.75% of gross household income, minimum KES 300 a month; unsalaried members pay on means-tested income (confirmed via 2026 guides; ira/sha pages block download)",
+          "source_url": "https://sha.go.ke/"
+        },
+        "notes": ["Government pays for households assessed as indigent.", "Informal-sector contributions were annual lump sums; the government later allowed pro-rata/monthly payment (Nation, 2025)."]
+      }
+    ]
+  }
+}

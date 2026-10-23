@@ -1,0 +1,6 @@
+{
+  "best_model": "XGBoost (tuned)",
+  "log_residual_sigma_test": 0.3009587975692995,
+  "train_mean_charges_usd": 13355.93084781946,
+  "data_rows": 1337
+}
